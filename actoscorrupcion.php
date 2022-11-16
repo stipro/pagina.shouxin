@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -18,13 +18,17 @@
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Waitme css -->
+    <link rel="stylesheet" href="assets/waitme/waitMe.min.css">
 
     <!-- =======================================================
   * Template Name: TheEvent - v4.9.1
@@ -110,63 +114,7 @@
         <section id="contact" class="section-bg">
 
             <div class="container" data-aos="fade-up">
-
-                <!-- <div class="section-header">
-              <h2>Contact Us</h2>
-              <p>Nihil officia ut sint molestiae tenetur.</p>
-            </div>
-    
-            <div class="row contact-info">
-    
-              <div class="col-md-4">
-                <div class="contact-address">
-                  <i class="bi bi-geo-alt"></i>
-                  <h3>Address</h3>
-                  <address>A108 Adam Street, NY 535022, USA</address>
-                </div>
-              </div>
-    
-              <div class="col-md-4">
-                <div class="contact-phone">
-                  <i class="bi bi-phone"></i>
-                  <h3>Phone Number</h3>
-                  <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
-                </div>
-              </div>
-    
-              <div class="col-md-4">
-                <div class="contact-email">
-                  <i class="bi bi-envelope"></i>
-                  <h3>Email</h3>
-                  <p><a href="mailto:info@example.com">info@example.com</a></p>
-                </div>
-              </div>
-    
-            </div> -->
-
                 <div class="form">
-                    <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                <div class="row">
-                  <div class="form-group col-md-6">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                  </div>
-                  <div class="form-group col-md-6 mt-3 mt-md-0">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                  </div>
-                </div>
-                <div class="form-group mt-3">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                </div>
-                <div class="form-group mt-3">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                </div>
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
-              </form> -->
                     <div class="section-header">
                         <h2>CANAL DE DENUNCIAS, RECLAMOS Y CONSULTAS MSP</h2>
                         <!-- <p>Nihil officia ut sint molestiae tenetur.</p> -->
@@ -192,7 +140,6 @@
                                     en el portal.
                                 </p>
                             </div>
-
                             <br>
                             <h5 class="text-justify fs-6 lh-sm">Autorización de uso de datos personales</h5>
                             <div class="ms-4">
@@ -201,7 +148,7 @@
                                     condiciones que proporciona esta plataforma.
                                 </p>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="check-terminosCondiciones">
+                                    <input class="form-check-input" type="checkbox" value="" id="check-terminosCondiciones" disabled>
                                     <label class="form-check-label" for="check-terminosCondiciones">
                                         Sí, he leído y acepto los
                                         <a class="link-primary" id="btn-terminosCondiciones">Términos y Condiciones</a>
@@ -211,7 +158,6 @@
                             </div>
                             <br>
                             <ol>
-
                                 <li value="1">
                                     <h5 class="text-justify fs-6 lh-sm">¿Desea hacer un denuncia anonima?</h5>
                                     <p class="text-justify fs-6 fw-light lh-sm">
@@ -220,11 +166,11 @@
                                     </p>
                                     <div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="anonymity-actCorruption" id="optionOne-actCorruption" value="Si">
+                                            <input class="form-check-input" type="radio" name="anonymityactCorruption" id="optionOne-actCorruption" value="Si">
                                             <label class="form-check-label" for="optionOne-actCorruption">Si</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="anonymity-actCorruption" id="optionTwo-actCorruption" value="No" checked>
+                                            <input class="form-check-input" type="radio" name="anonymityactCorruption" id="optionTwo-actCorruption" value="No" checked>
                                             <label class="form-check-label" for="optionTwo-actCorruption">No</label>
                                         </div>
                                     </div>
@@ -257,12 +203,11 @@
                                         <div class="mb-3 row">
                                             <label for="email-actCorruption" class="col-sm-3 col-form-label">Correo:</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" id="email-actCorruption" name="email" value="">
+                                                <input type="email" class="form-control" id="email-actCorruption" name="email" value="">
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-
                                 <li>
                                     <div class="col-6 col-sm-4 mb-3">
                                         <div class="form-group">
@@ -290,7 +235,6 @@
                                         </div>
                                     </div>
                                 </li>
-
                                 <li>
                                     <div class="col-12 col-sm-6 mb-3">
                                         <div class="form-group">
@@ -301,7 +245,6 @@
                                         </div>
                                     </div>
                                 </li>
-
                                 <li>
                                     <div class="col-12 col-sm-6 mb-3">
                                         <div class="form-group">
@@ -316,8 +259,12 @@
                                         </div>
                                     </div>
                                 </li>
-
                             </ol>
+                        </div>
+                        <div class="my-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
                         <div class="text-center">
                             <button type="submit">Enviar</button>
@@ -408,15 +355,30 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+    <?php require_once 'modals/notification.php'; ?>
+    <?php require_once 'modals/terminosCondiciones.php'; ?>
+
+    <!-- scripts necessarios -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+
+    <!-- waitme js -->
+    <script src="assets/waitme/waitMe.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/actoCorrupcion.js"></script>
 
 </body>
 

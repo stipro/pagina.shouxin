@@ -66,7 +66,7 @@
                     <li class="dropdown"><a href="#"><span>Canal de Denuncias</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="./actoscorrupcion.php">Acto de corrupción/Otros</a></li>
-                            <li><a href="#">Denuncias sobre Hostigamiento Laboral</a></li>
+                            <li><a href="./hostigamientosexual.php">Denuncias sobre Hostigamiento Laboral</a></li>
                             <li><a href="#">Denuncia/Reclamo Laboral</a></li>
                             <li><a href="#">Consulta/Denuncia/Reclamos al cmplimiento de pacto de Relaciones
                                     comunitarias</a></li>

@@ -442,8 +442,26 @@
                                 </div>
                                 <div class="col-11">
                                     <label class="form-check-label" for="check-terminosCondiciones">
-                                    Acepto la
-                                        <a class="link-primary" id="btn-terminosCondiciones">declaración procedente*</a>
+                                        Acepto la
+                                        <a class="link-primary" id="btn-terminosCondiciones">declaración procedente.*</a>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="container-fluid row">
+                                <div class="col-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="acceptTerms" value="" id="check-terminosCondiciones">
+                                        <!-- <label class="form-check-label" for="check-terminosCondiciones">
+                                        Sí, he leído y acepto los
+                                        <a class="link-primary" id="btn-terminosCondiciones">Términos y Condiciones</a>
+                                        para la formulación de la denuncia.
+                                    </label> -->
+                                    </div>
+                                </div>
+                                <div class="col-11">
+                                    <label class="form-check-label" for="check-terminosCondiciones">
+                                        Autorizo a Minera Shouxin Perú S.A., a utilizar mis datos personales.
                                     </label>
                                 </div>
                             </div>

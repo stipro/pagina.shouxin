@@ -147,14 +147,27 @@
                                     Registre de manera concreta y clara su denuncia, de acuerdo a los términos y
                                     condiciones que proporciona esta plataforma.
                                 </p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="acceptTerms" value="" id="check-terminosCondiciones" disabled>
-                                    <label class="form-check-label" for="check-terminosCondiciones">
+
+                                <div class="container-fluid row">
+                                    <div class="col-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="acceptTerms" value="" id="check-terminosCondiciones" disabled>
+                                            <!-- <label class="form-check-label" for="check-terminosCondiciones">
                                         Sí, he leído y acepto los
                                         <a class="link-primary" id="btn-terminosCondiciones">Términos y Condiciones</a>
                                         para la formulación de la denuncia.
-                                    </label>
+                                    </label> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-11">
+                                        <label class="form-check-label" for="check-terminosCondiciones">
+                                            Sí, he leído y acepto los
+                                            <a class="link-primary" id="btn-terminosCondiciones">Términos y Condiciones</a>
+                                            para la formulación de la denuncia.
+                                        </label>
+                                    </div>
                                 </div>
+
                             </div>
                             <br>
                             <ol>

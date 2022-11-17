@@ -148,7 +148,7 @@
                                     condiciones que proporciona esta plataforma.
                                 </p>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="check-terminosCondiciones" disabled>
+                                    <input class="form-check-input" type="checkbox" name="acceptTerms" value="" id="check-terminosCondiciones" disabled>
                                     <label class="form-check-label" for="check-terminosCondiciones">
                                         Sí, he leído y acepto los
                                         <a class="link-primary" id="btn-terminosCondiciones">Términos y Condiciones</a>
@@ -213,7 +213,7 @@
                                         <div class="form-group">
                                             <label for="insertSlt-documentIdentity-actCorruption" class="control-label form-control-sm form-label">Tipo de Denuncia<span class="text-danger">*</span></label>
                                             <div class="input-group input-group-sm">
-                                                <select id="insertSlt-documentIdentity-actCorruption" class="form-select form-select-sm custom-select" data-placeholder="Seleccióne Doc. de Indentificación">
+                                                <select id="insertSlt-documentIdentity-actCorruption" class="form-select form-select-sm custom-select" data-placeholder="Seleccióne Doc. de Indentificación" name="typeofcomplaint">
                                                     <option value="Lavado de Activo">Lavado de Activo</option>
                                                     <option value="Trafico de Influencias">Trafico de Influencias
                                                     </option>
@@ -240,7 +240,7 @@
                                         <div class="form-group">
                                             <label for="typeComplaint-actCorruption" class="control-label form-control-sm form-label">Sustentar hecho<span class="text-danger">*</span></label>
                                             <div class="input-group input-group-sm">
-                                                <textarea id="typeComplaint-actCorruption" class="form-control form-control-sm" rows="8"></textarea>
+                                                <textarea id="typeComplaint-actCorruption" class="form-control form-control-sm" rows="8" name="lift"></textarea>
                                             </div>
                                         </div>
                                     </div>

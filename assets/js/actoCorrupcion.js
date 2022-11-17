@@ -67,27 +67,24 @@ function add_actCorruption_form(e) {
     let val_direccion = $('[name="address"]', form).val();
     let val_correo = $('[name="email"]', form).val();
 
-    if (val_nombresApellidos === '') {
+    /* if (val_nombresApellidos === '') {
         setErrorFor(val_nombresApellidos, 'No puede dejar el Nombre en blanco');
     } else {
         setSuccessFor(val_nombresApellidos);
     }
-
-
-
     for (var pair of data.entries()) {
 
         console.log(pair[0] + ', ' + pair[1]);
 
-    }
+    } */
 
-    console.table(data);
+    /* console.table(data);
     console.log(data);
-    console.log(data.entries());
+    console.log(data.entries()); */
 
     // AJAX
-    /* $.ajax({
-        url: 'ajax/add_actCorruption_form',
+    $.ajax({
+        url: 'controllers/controllerActoCorrupcion.php',
         type: 'post',
         dataType: 'json',
         contentType: false,
@@ -108,5 +105,5 @@ function add_actCorruption_form(e) {
         toastr.error('Hubo un error en la petición', '¡Upss!');
     }).always(function () {
         form.waitMe('hide');
-    }) */
+    })
 }

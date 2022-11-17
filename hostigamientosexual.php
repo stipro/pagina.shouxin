@@ -111,7 +111,7 @@
             <div class="container" data-aos="fade-up">
                 <div class="form">
                     <div class="section-header">
-                        <h2>DENUNCIAS O QUEJA PORACTO DE HOSTIGAMIENTO SEXUAL</h2>
+                        <h2>DENUNCIAS O QUEJA POR ACTO DE HOSTIGAMIENTO SEXUAL</h2>
                         <!-- <p>Nihil officia ut sint molestiae tenetur.</p> -->
                     </div>
                     <p class="text-justify">
@@ -429,6 +429,24 @@
                             </p>
 
                             <p>Sin otro particular,</p>
+                            <div class="container-fluid row">
+                                <div class="col-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="acceptTerms" value="" id="check-terminosCondiciones" disabled>
+                                        <!-- <label class="form-check-label" for="check-terminosCondiciones">
+                                        Sí, he leído y acepto los
+                                        <a class="link-primary" id="btn-terminosCondiciones">Términos y Condiciones</a>
+                                        para la formulación de la denuncia.
+                                    </label> -->
+                                    </div>
+                                </div>
+                                <div class="col-11">
+                                    <label class="form-check-label" for="check-terminosCondiciones">
+                                    Acepto la
+                                        <a class="link-primary" id="btn-terminosCondiciones">declaración procedente*</a>
+                                    </label>
+                                </div>
+                            </div>
                         </ol>
                     </form>
                 </div>

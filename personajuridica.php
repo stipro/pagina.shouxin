@@ -173,9 +173,9 @@
                                 </div>
                                 <div class="col-12 col-sm-6 mb-3">
                                     <div class="form-group">
-                                        <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Nombres y Apellidos:<span class="text-danger">*</span></label>
+                                        <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Cargo:<span class="text-danger">*</span></label>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" name="namesSurnames-victim" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Nombres" value="">
+                                            <input type="text" name="namesSurnames-victim" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Cargo" value="">
                                             <div>
                                             </div>
                                         </div>
@@ -183,9 +183,48 @@
                                 </div>
                                 <div class="col-12 col-sm-6 mb-3">
                                     <div class="form-group">
-                                        <label for="identificationDocument-sexualHarassment" class="control-label form-control-sm form-label">Denominación o razón social:<span class="text-danger">*</span></label>
+                                        <label for="identificationDocument-sexualHarassment" class="control-label form-control-sm form-label">Nombre de la institución (organismo público u organización internacional):<span class="text-danger">*</span></label>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" name="identificationDocumen-victimt" id="identificationDocument-sexualHarassment" class="form-control form-control-sm" placeholder="Denominación o razón social" value="">
+                                            <input type="text" name="identificationDocumen-victimt" id="identificationDocument-sexualHarassment" class="form-control form-control-sm" placeholder="Nombre de la institución" value="">
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="" class="control-label form-control-sm form-label">En caso el accionista, socio o asociado sea persona juridica:<span class="text-danger">*</span></label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="anonymityactCorruption" id="optionOne-actCorruption" value="Si">
+                                        <label class="form-check-label" for="optionOne-actCorruption"></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Denominación o razón social:<span class="text-danger">*</span></label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" name="namesSurnames-victim" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Denominación o razón social" value="">
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="identificationDocument-sexualHarassment" class="control-label form-control-sm form-label">Número de RUC:<span class="text-danger">*</span></label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" name="identificationDocumen-victimt" id="identificationDocument-sexualHarassment" class="form-control form-control-sm" placeholder="Número de RUC" value="">
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="identificationDocument-sexualHarassment" class="control-label form-control-sm form-label">Número de Registro equivalente (organismo público y organización internacional):<span class="text-danger">*</span></label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" name="identificationDocumen-victimt" id="identificationDocument-sexualHarassment" class="form-control form-control-sm" placeholder="Número de Registro equivalente" value="">
                                             <div>
                                             </div>
                                         </div>
@@ -197,19 +236,7 @@
                                 <div class="col-12 col-sm-6 mb-3">
                                     <div class="form-group">
                                         <div class="input-group input-group-sm">
-                                            <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="código de Ocupación" value="">
-                                            <div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <label for="" class="control-label form-control-sm form-label">001: Ama de casa; 002: Desempleado; 003: Empleado; 004: Empleador(a); 005: Estudiante; 006: Jubilado(a);
-                                    007: Miembro de las fuerzas armadas / Mienbro del clero; 008: Obrero(a) 009:Trabajador(a) del Hogar; 010:Trabajador(a) Independiente; 099: No declara</label>
-                                <div class="col-12 col-sm-6 mb-3">
-                                    <div class="form-group">
-                                        <label for="identificationDocument-sexualHarassment" class="control-label form-control-sm form-label">Cargo en el sujeto obligado:<span class="text-danger">*</span></label>
-                                        <div class="input-group input-group-sm">
-                                            <input type="text" name="name-collaborator" id="identificationDocument-sexualHarassment" class="form-control form-control-sm" placeholder="Cargo" value="">
+                                            <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Propósito de la relación con el sujeto obligado" value="">
                                             <div>
                                             </div>
                                         </div>
@@ -217,29 +244,19 @@
                                 </div>
                             </div>
 
-                            <li>Domicilio personal (Indicar: Jr. - Av. - Calle - Pasaje/N° o en su defecto Mz. y Lote/Dpto-Int N° /Urb. - Complejo - Zona - Sector /Distrito/Provincia/Departamento):</li>
+                            <li>Datos de Identificación del Ejecutante:</li>
                             <div class="mb-3 row">
                                 <div class="col-12 col-sm-12 mb-3">
                                     <div class="form-group">
                                         <div class="input-group input-group-sm">
-                                            <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Domicilio personal" value="">
-                                            <div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 mb-3">
-                                    <div class="form-group">
-                                        <label for="" class="control-label form-control-sm form-label">N° Teléfono personal(Fijo/Celular):<span class="text-danger">*</span></label>
-                                        <div class="input-group input-group-sm">
-                                            <input type="text" name="name-collaborator" id="identificationDocument-sexualHarassment" class="form-control form-control-sm" placeholder="N° Teléfono personal" value="">
+                                            <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Datos de Identificación del Ejecutante" value="">
                                             <div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <li>Estudios profesionales y capacitaciónes espcializadas recibidas</li>
+                            <li>Dirección de la oficina o local principal donde desarrola las actividades propias del negocio(Indicar: Jr. - Av. - Calle - Pasaje/N° °Dpto-Int. N° /Urb. - Complejo - Zona - Sector / Distrito/ Departamento):</li>
                             <div class="mb-3 row">
                                 <div class="col-12 col-sm-12 mb-3">
                                     <div class="form-group">
@@ -270,90 +287,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <li>Información sobre sus antecedentes policiales y penalas (Marque SI / NO según corresponda):</li>
-                            <div>
-                                <label for="" class="control-label form-control-sm form-label">Declaro tener antecedentes policiales:<span class="text-danger">*</span></label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="anonymityactCorruption" id="optionOne-actCorruption" value="Si">
-                                    <label class="form-check-label" for="optionOne-actCorruption">Si</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="anonymityactCorruption" id="optionTwo-actCorruption" value="No" checked>
-                                    <label class="form-check-label" for="optionTwo-actCorruption">No</label>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="" class="control-label form-control-sm form-label">Declaro tener antecedentes penales:<span class="text-danger">*</span></label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="anonymityactCorruption" id="optionOne-actCorruption" value="Si">
-                                    <label class="form-check-label" for="optionOne-actCorruption">Si</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="anonymityactCorruption" id="optionTwo-actCorruption" value="No" checked>
-                                    <label class="form-check-label" for="optionTwo-actCorruption">No</label>
-                                </div>
-                            </div>
+                            <li>Origen de los fondos/activos involucrados en la operación, cuando esta se realice en efectivo e iguale o supere el mbral para efectos del RO:</li>
+
                             <li>Antecedentes laborales: experiencia laboral en los últimos dos (2)años, previos a la contratación por el sujeto obligado. Consigne la información siguiente,
                                 de la más reciente a la más antiguia:</li>
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Nombre de la empresa, entidad o persona natural con la que trabajó o prestó servicios</th>
-                                            <th scope="col">Cargo desempeñado</th>
-                                            <th scope="col">Fecha de inicio (Mes/Año)</th>
-                                            <th scope="col">Fecha de conclusión (Mes/Año)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td><input type="text" class="input-group-text form-control" name="" id=""></td>
-                                            <td><input type="text" class="input-group-text form-control" name="" id=""></td>
-                                            <td><input type="text" class="input-group-text form-control" name="" id=""></td>
-                                            <td><input type="text" class="input-group-text form-control" name="" id=""></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td><input type="text" class="input-group-text form-control" name="" id=""></td>
-                                            <td><input type="text" class="input-group-text form-control" name="" id=""></td>
-                                            <td><input type="text" class="input-group-text form-control" name="" id=""></td>
-                                            <td><input type="text" class="input-group-text form-control" name="" id=""></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td><input type="text" class="input-group-text form-control" name="" id=""></td>
-                                            <td><input type="text" class="input-group-text form-control" name="" id=""></td>
-                                            <td><input type="text" class="input-group-text form-control" name="" id=""></td>
-                                            <td><input type="text" class="input-group-text form-control" name="" id=""></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <li>Antecedentes patrimoniales (información patrimonial y de otros ingresos que genere fuera del sujeto obligado):</li>
-                            <div class="mb-3 row">
-                                <div class="col-12 col-sm-6 mb-3">
-                                    <div class="form-group">
-                                        <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">1. Información patrimonial: hacer referencia al número de bienes inmuebles y/o muebles registrables<span class="text-danger">*</span></label>
-                                        <div class="input-group input-group-sm">
-                                            <input type="text" name="namesSurnames-victim" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="" value="">
-                                            <div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 mb-3">
-                                    <div class="form-group">
-                                        <label for="identificationDocument-sexualHarassment" class="control-label form-control-sm form-label">2. Otros ingresos que genere fuera del sujeto obligado:<span class="text-danger">*</span></label>
-                                        <div class="input-group input-group-sm">
-                                            <input type="text" name="identificationDocumen-victimt" id="identificationDocument-sexualHarassment" class="form-control form-control-sm" placeholder="" value="">
-                                            <div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </ol>
                     </form>
                 </div>

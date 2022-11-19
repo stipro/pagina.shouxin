@@ -246,39 +246,67 @@
 
                             <li>Datos de Identificación del Ejecutante:</li>
                             <div class="mb-3 row">
-                                <div class="col-12 col-sm-12 mb-3">
+                                <div class="col-12 col-sm-6 mb-3">
                                     <div class="form-group">
+                                        <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Nombres y apellidos: <span class="text-danger">*</span></label>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Datos de Identificación del Ejecutante" value="">
+                                            <input type="text" name="namesSurnames-victim" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Nombres y apellidos" value="">
                                             <div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-12 col-sm-12 mb-3">
+                                    <label for="" class="control-label form-control-sm form-label">Tipo y número de documento de identidad (Marque según corresponda):<span class="text-danger">*</span></label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="relationshipHarassed" id="relationshipHarassed1" checked>
+                                        <label class="form-check-label" for="relationshipHarassed1">
+                                            DNI
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="relationshipHarassed" id="relationshipHarassed2">
+                                        <label class="form-check-label" for="relationshipHarassed2">
+                                            Pasaporte
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="relationshipHarassed" id="relationshipHarassed3">
+                                        <label class="form-check-label" for="relationshipHarassed3">
+                                            Carné de Extranjeria
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="relationshipHarassed" id="relationshipHarassed4">
+                                        <label class="form-check-label" for="relationshipHarassed4">
+                                            Otro (indique)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="relationshipHarassed" id="relationshipHarassed5">
+                                        <label class="form-check-label" for="relationshipHarassed5">
+                                            N°
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12 mb-3">
+                                    <label for="" class="control-label form-control-sm form-label">El Ejecutante tiene representación por (Marque sepun corresponda):<span class="text-danger">*</span></label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="relationshipHarassed" id="relationshipHarassed1" checked>
+                                        <label class="form-check-label" for="relationshipHarassed1">
+                                            Poder
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="relationshipHarassed" id="relationshipHarassed2">
+                                        <label class="form-check-label" for="relationshipHarassed2">
+                                            Mandato
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                            <li>Dirección de la oficina o local principal donde desarrola las actividades propias del negocio(Indicar: Jr. - Av. - Calle - Pasaje/N° °Dpto-Int. N° /Urb. - Complejo - Zona - Sector / Distrito/ Departamento):</li>
+                            <li>Dirección de la oficina o local principal donde desarrolla las actividades propias del negocio(Indicar: Jr. - Av. - Calle - Pasaje/N° °Dpto-Int. N° /Urb. - Complejo - Zona - Sector / Distrito/ Departamento):</li>
                             <div class="mb-3 row">
-                                <div class="col-12 col-sm-12 mb-3">
-                                    <div class="form-group">
-                                        <div class="input-group input-group-sm">
-                                            <input type="text" name="" id="" class="form-control form-control-sm" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-12 mb-3">
-                                    <div class="form-group">
-                                        <div class="input-group input-group-sm">
-                                            <input type="text" name="" id="" class="form-control form-control-sm" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-12 mb-3">
-                                    <div class="form-group">
-                                        <div class="input-group input-group-sm">
-                                            <input type="text" name="" id="" class="form-control form-control-sm" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="col-12 col-sm-12 mb-3">
                                     <div class="form-group">
                                         <div class="input-group input-group-sm">
@@ -288,9 +316,27 @@
                                 </div>
                             </div>
                             <li>Origen de los fondos/activos involucrados en la operación, cuando esta se realice en efectivo e iguale o supere el mbral para efectos del RO:</li>
-
-                            <li>Antecedentes laborales: experiencia laboral en los últimos dos (2)años, previos a la contratación por el sujeto obligado. Consigne la información siguiente,
-                                de la más reciente a la más antiguia:</li>
+                            <div class="mb-3 row">
+                                <div class="col-12 col-sm-12 mb-3">
+                                    <div class="form-group">
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" name="" id="" class="form-control form-control-sm" placeholder="" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid row">
+                                <div class="col-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="acceptTerms" value="" id="check-terminosCondiciones">
+                                    </div>
+                                </div>
+                                <div class="col-11">
+                                    <label class="form-check-label" for="check-terminosCondiciones">
+                                        Afirmo y ratifico todo lo manifestado en la presente declaración jurada
+                                    </label>
+                                </div>
+                            </div>
                         </ol>
                     </form>
                 </div>

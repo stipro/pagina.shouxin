@@ -35,7 +35,7 @@ document.getElementById("cellphone-actCorruption").addEventListener("input", (e)
     e.target.value = value.replace(/[^\d-]/g, "");
 });
 
-function setErrorFor(input, message) {
+/* function setErrorFor(input, message) {
     input.classList.remove('is-valid');
     input.classList.add('is-invalid');
     const formControl = input.parentElement;
@@ -51,7 +51,7 @@ function setSuccessFor(input) {
     const div = formControl.querySelector('div');
     div.className = 'valid-feedback';
     div.innerText = '';
-}
+} */
 
 $('#formCreate-actCorruption').on('submit', add_actCorruption_form);
 // Agrega Producto

@@ -46,56 +46,8 @@
                 <a href="index.html" class="scrollto"><img src="assets/img/logo.png" alt="" title=""></a>
             </div>
 
-            <nav id="navbar" class="navbar order-last order-lg-0">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="./">Inicio</a></li>
-                    <li><a class="nav-link scrollto" href="#about">Nosotros</a></li>
-                    <li><a class="nav-link scrollto" href="#speakers">Proyectos</a></li>
-                    <li><a class="nav-link scrollto" href="#schedule">Noticias</a></li>
-                    <li><a class="nav-link scrollto" href="#venue">Buzon de Sugerencias</a></li>
-                    <li><a class="nav-link scrollto" href="#hotels">Trabaja con Nosotros</a></li>
-
-                    <!-- <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#speakers">Speakers</a></li>
-                    <li><a class="nav-link scrollto" href="#schedule">Schedule</a></li>
-                    <li><a class="nav-link scrollto" href="#venue">Venue</a></li>
-                    <li><a class="nav-link scrollto" href="#hotels">Hotels</a></li>
-                    <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
-                    <li><a class="nav-link scrollto" href="#supporters">Sponsors</a></li> -->
-                    <li class="dropdown"><a href="#"><span>Canal de Denuncias</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="./actoscorrupcion.php">Acto de corrupción/Otros</a></li>
-                            <li><a href="./hostigamientosexual.php">Denuncias sobre Hostigamiento Laboral</a></li>
-                            <li><a href="#">Denuncia/Reclamo Laboral</a></li>
-                            <li><a href="#">Consulta/Denuncia/Reclamos al cmplimiento de pacto de Relaciones
-                                    comunitarias</a></li>
-                            <li><a href="./prevencioncontrol.php">Prevención y Control del Sistema Anticorrupción</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li> -->
-                    <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+            <?php require_once './navbar.php'; ?>
+            <!-- .navbar -->
             <!-- <a class="buy-tickets scrollto" href="#buy-tickets">Buy Tickets</a> -->
 
         </div>
@@ -104,7 +56,7 @@
     <section class="background-section">
 
     </section>
-    <main id="main" class="mt-5 pt-5">
+    <main id="main" class="">
 
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="section-bg">

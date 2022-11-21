@@ -12,7 +12,7 @@ $(document).on('click', '#btnAceept-terminosCondiciones', function (e) {
     $("#check-terminosCondiciones").prop("checked", true);
 });
 
-$('input:radio[name=anonymity-actCorruption]').change(function () {
+$('input:radio[name=anonymityactCorruption]').change(function () {
     if (this.value == 'Si') {
         document.getElementById('form-denouncesAnonymity').style.display = 'none';
     }
@@ -66,6 +66,13 @@ function add_actCorruption_form(e) {
     let val_telefono = $('[name="cellphone"]', form).val();
     let val_direccion = $('[name="address"]', form).val();
     let val_correo = $('[name="email"]', form).val();
+    let val_acceptedTerms = 0;
+
+    if (document.getElementById('check-terminosCondiciones').checked) {
+        val_acceptedTerms = 1;
+    }
+
+    data.append("acceptedTerms", val_acceptedTerms);
 
     /* if (val_nombresApellidos === '') {
         setErrorFor(val_nombresApellidos, 'No puede dejar el Nombre en blanco');

@@ -27,6 +27,9 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
+    <!-- Toastr css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
     <!-- Waitme css -->
     <link rel="stylesheet" href="assets/waitme/waitMe.min.css">
 
@@ -152,11 +155,6 @@
                                     <div class="col-1">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" name="acceptTerms" value="" id="check-terminosCondiciones" disabled>
-                                            <!-- <label class="form-check-label" for="check-terminosCondiciones">
-                                        Sí, he leído y acepto los
-                                        <a class="link-primary" id="btn-terminosCondiciones">Términos y Condiciones</a>
-                                        para la formulación de la denuncia.
-                                    </label> -->
                                         </div>
                                     </div>
                                     <div class="col-11">
@@ -386,6 +384,9 @@
 
     <!-- waitme js -->
     <script src="assets/waitme/waitMe.min.js"></script>
+
+    <!-- toastr js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>

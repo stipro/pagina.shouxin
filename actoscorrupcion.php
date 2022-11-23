@@ -208,16 +208,26 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="col-12 col-sm-6 mb-3">
+                                    <div class="col-12 col-sm-12 mb-3">
                                         <div class="form-group">
+                                            <h5>Medio probatoria (Adjuntar)</h5>
                                             <label for="" class="control-label form-control-sm form-label">Medio
                                                 probatoria (Adjuntar)<span class="text-danger">*</span></label>
                                             <div class="input-group input-group-sm">
-                                                <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                                <input class="form-control form-control-sm" id="formFileSm" type="file" multiple>
                                             </div>
                                             <div id="documentIdentity-collaborator-Help" class="form-text">Usted puede
                                                 adjuntar hasta 4 archivos PDF, JPG, Word, Powerpoint, Excel, ZIP o RAR y
                                                 que no superen los 12 mbs cada uno</div>
+                                            <!-- Upload Finished -->
+                                            <div class="js-upload-finished">
+                                                <h4>Historial Archivos</h4>
+                                                <div class="list-group"> <a href="#" class="list-group-item list-group-item-danger"><span class="badge alert-danger pull-right">23-11-2014</span>amended-catalogue-01.xls</a>
+                                                    <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">23-11-2014</span>amended-catalogue-01.xls</a>
+                                                    <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">23-11-2014</span>amended-catalogue-01.xls</a>
+                                                    <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">23-11-2014</span>amended-catalogue.xls</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>

@@ -9,13 +9,12 @@ class Conexion
     }
     private function conectar()
     {
-        try
-        {
+        try {
             $url_actual = $this->get_url();
             $separador = "/"; // Usar una cadena
             $ubicaciones = explode($separador, $url_actual);
             //var_dump($ubicaciones);
-            if($ubicaciones[2] == 'localhost'){
+            if ($ubicaciones[2] == 'localhost') {
 
                 $HOST   = '127.0.0.1';
                 $DBNAME = 'shouxinadm_sistema';
@@ -24,8 +23,7 @@ class Conexion
                 $con    = new PDO("mysql:host={$HOST}; dbname={$DBNAME}", $USER, $PASS);
                 $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $con->exec('SET CHARACTER SET UTF8');
-            }
-            elseif($ubicaciones[2] == '179.43.97.31'){
+            } elseif ($ubicaciones[2] == '179.43.97.31') {
                 $HOST   = '127.0.0.1';
                 $DBNAME = 'shouxinadm_sistema';
                 $USER   = 'shouxinadm';
@@ -33,8 +31,7 @@ class Conexion
                 $con    = new PDO("mysql:host={$HOST}; dbname={$DBNAME}", $USER, $PASS);
                 $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $con->exec('SET CHARACTER SET UTF8');
-            }
-            else{
+            } else {
                 $HOST   = '127.0.0.1';
                 $DBNAME = 'shouxinadm_sistema';
                 $USER   = 'shouxinadm';
@@ -44,23 +41,18 @@ class Conexion
                 $con->exec('SET CHARACTER SET UTF8');
             }
             return $con;
-        }
-        catch (PDOException $e)
-        {
+        } catch (PDOException $e) {
             //$rptController.='No se pudo conectar a la BD: ' . $e->getMessage();
             echo "No se pudo conectar a la BD: " . $e->getMessage();
-        }
-        finally {
-        
-            
+        } finally {
         }
     }
-    public function get_url(){
-        if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
-            $url = "https://"; 
-        }
-        else{
-            $url = "http://"; 
+    public function get_url()
+    {
+        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+            $url = "https://";
+        } else {
+            $url = "http://";
         }
         return $url . $_SERVER['HTTP_HOST'] .  $_SERVER['REQUEST_URI'];
         //return $_SERVER['REQUEST_URI'];

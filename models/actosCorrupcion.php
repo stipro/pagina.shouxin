@@ -20,7 +20,7 @@ class actosCorrupcion extends Conexion
     ) {
 
         try {
-            $query  = "INSERT INTO acto_corrupcion (
+            $query  = "INSERT INTO actos_corrupcion (
                 autorizacionUsoDatos_actoCorrupcion,
                 denunciaAnonima_actoCorrupcion,
                 nombres_actoCorrupcion,
@@ -54,7 +54,8 @@ class actosCorrupcion extends Conexion
                     ':sustento_actoCorrupcion' => $val_lift
                 )
             );
-            echo 'BIEN';
+
+            return $this->db->lastInsertId();
         } catch (PDOException $e) {
             var_dump($e->getCode());
             if ($e->getCode() == 42000) {
@@ -66,16 +67,9 @@ class actosCorrupcion extends Conexion
             }
         }
     }
-    public function delete(int $id)
+    public function getLast_row(): array
     {
-        error_reporting(0);
-        try {
-            $query  = "DELETE FROM talmacen WHERE nIdAlm=:id;";
-            $result = $this->db->prepare($query);
-            $result->execute(array(':id' => $id));
-            echo 'BIEN';
-        } catch (PDOException $e) {
-            echo 'ERROR';
-        }
+        $query = "SELECT MAX(id_actoCorrupcion) AS lastRow FROM actos_corrupcion;";
+        return $this->ConsultaSimple($query);
     }
 }

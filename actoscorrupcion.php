@@ -225,7 +225,8 @@
                                                 <h4>Historial Archivos</h4>
                                                 <div id="filesList" class="list-group"></div>
                                             </div>
-
+                                            <button id="btnEnviar" class="btn btn-success">Enviar</button>
+                                            <div class="alert alert-info" id="estado"></div>
                                         </div>
                                     </div>
                                 </li>
@@ -305,6 +306,9 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/actoCorrupcion.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/subir.js"></script>
 
     <script>
         const dt = new DataTransfer(); // Permet de manipuler les fichiers de l'input file

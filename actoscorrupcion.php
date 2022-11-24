@@ -211,23 +211,21 @@
                                     <div class="col-12 col-sm-12 mb-3">
                                         <div class="form-group">
                                             <h5>Medio probatoria (Adjuntar)</h5>
+
+
                                             <label for="" class="control-label form-control-sm form-label">Medio
                                                 probatoria (Adjuntar)<span class="text-danger">*</span></label>
                                             <div class="input-group input-group-sm">
-                                                <input class="form-control form-control-sm" id="formFileSm" type="file" multiple>
+                                                <input class="form-control form-control-sm" name="file[]" id="formFileSm" type="file" multiple>
                                             </div>
                                             <div id="documentIdentity-collaborator-Help" class="form-text">Usted puede
                                                 adjuntar hasta 4 archivos PDF, JPG, Word, Powerpoint, Excel, ZIP o RAR y
                                                 que no superen los 12 mbs cada uno</div>
-                                            <!-- Upload Finished -->
-                                            <div class="js-upload-finished">
+                                            <div id="files-area">
                                                 <h4>Historial Archivos</h4>
-                                                <div class="list-group"> <a href="#" class="list-group-item list-group-item-danger"><span class="badge alert-danger pull-right">23-11-2014</span>amended-catalogue-01.xls</a>
-                                                    <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">23-11-2014</span>amended-catalogue-01.xls</a>
-                                                    <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">23-11-2014</span>amended-catalogue-01.xls</a>
-                                                    <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">23-11-2014</span>amended-catalogue.xls</a>
-                                                </div>
+                                                <div id="filesList" class="list-group"></div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </li>
@@ -251,60 +249,13 @@
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
+
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-3 col-md-6 footer-info">
                         <img src="assets/img/logo.png" alt="TheEvenet">
-                        <!-- <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et
-                            totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id
-                            quis. In inventore consequatur ad voluptate cupiditate debitis accusamus repellat cumque.
-                        </p> -->
                     </div>
-
-                    <!-- <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div> -->
-
-                    <!-- <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div> -->
-
-                    <!-- <div class="col-lg-3 col-md-6 footer-contact">
-                        <h4>Contact Us</h4>
-                        <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
-
-                        <div class="social-links">
-                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                        </div>
-
-                    </div> -->
-
                 </div>
             </div>
         </div>
@@ -354,6 +305,48 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/actoCorrupcion.js"></script>
+
+    <script>
+        const dt = new DataTransfer(); // Permet de manipuler les fichiers de l'input file
+
+        $("#formFileSm").on('change', function(e) {
+            for (var i = 0; i < this.files.length; i++) {
+                let fileBloc = $('<a/>', {
+                        class: 'file-block list-group-item list-group-item-danger'
+                    }),
+                    fileName = $('<span/>', {
+                        class: 'name',
+                        text: this.files.item(i).name
+                    });
+                fileBloc.append('<i class="file-delete bi bi-trash3 me-3"></i>')
+                    .append(fileName);
+                $("#filesList").append(fileBloc);
+            };
+            // Ajout des fichiers dans l'objet DataTransfer
+            for (let file of this.files) {
+                dt.items.add(file);
+            }
+            // Mise à jour des fichiers de l'input file après ajout
+            this.files = dt.files;
+
+            // EventListener pour le bouton de suppression créé
+            $('i.file-delete').click(function() {
+                let name = $(this).next('span.name').text();
+                // Supprimer l'affichage du nom de fichier
+                $(this).parent().remove();
+                for (let i = 0; i < dt.items.length; i++) {
+                    // Correspondance du fichier et du nom
+                    if (name === dt.items[i].getAsFile().name) {
+                        // Suppression du fichier dans l'objet DataTransfer
+                        dt.items.remove(i);
+                        continue;
+                    }
+                }
+                // Mise à jour des fichiers de l'input file après suppression
+                document.getElementById('formFileSm').files = dt.files;
+            });
+        });
+    </script>
 
 </body>
 

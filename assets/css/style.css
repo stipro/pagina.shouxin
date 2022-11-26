@@ -240,7 +240,8 @@ h6 {
 
 .navbar>ul>li {
   white-space: nowrap;
-  padding: 10px 0 10px 12px;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  /* padding: 10px 0 10px 12px; */
 }
 
 .navbar a,

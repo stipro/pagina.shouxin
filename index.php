@@ -44,7 +44,7 @@
             <div id="logo" class="me-auto">
                 <!-- Uncomment below if you prefer to use a text logo -->
                 <!-- <h1><a href="index.html">The<span>Event</span></a></h1>-->
-                <a href="index.html" class="scrollto"><img src="assets/img/logo-minera.png" alt="" title=""></a>
+                <a href="index.html" class="scrollto"><img src="assets/img/shouxin-rm.png" alt="" title="" style="position: fixed;bottom: 1rem;"></a>
             </div>
             <?php require_once './navbar.php'; ?>
             <!-- .navbar -->
@@ -65,10 +65,10 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./img/1.png" class="d-block w-100 item-img" alt="...">
+                    <img src="./img/1.JPG" class="d-block w-100 item-img" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <!-- <h5>Bienvenido</h5> -->
-                        <p>Minera SHOUXIN PERU S.A.</p>
+                        <!-- <p>Minera SHOUXIN PERU S.A.</p> -->
                     </div>
                 </div>
                 <div class="carousel-item">

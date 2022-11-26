@@ -1,8 +1,9 @@
-<nav id="navbar" class="navbar order-last order-lg-0">
+<nav id="navbar" class="navbar order-last order-lg-0" style="position: fixed;">
     <ul>
         <li><a class="nav-link scrollto active" href="./">INICIO</a></li>
         <li><a class="nav-link scrollto" href="#">CONOCENOS</a></li>
         <li><a class="nav-link scrollto" href="#">RR.SS</a></li>
+        <li><a class="nav-link scrollto" href="#">NOTICIAS</a></li>
         <li><a class="nav-link scrollto" href="#">TRABAJA CON NOSOTROS</a></li>
         <li class="dropdown"><a href="#"><span>CANAL DE DENUNCIAS</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

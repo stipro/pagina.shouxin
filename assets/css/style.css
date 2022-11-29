@@ -150,7 +150,7 @@ h6 {
 
 #header.header-scrolled,
 #header.header-inner {
-  background: #0758aa9c; /* rgba(6, 12, 34, 0.98);*/
+  /* rgba(6, 12, 34, 0.98);*/
   height: 70px;
 }
 
@@ -227,9 +227,11 @@ h6 {
 }
 
 .navbar ul {
+  width: 100vw;
   margin: 0;
   padding: 0;
   display: flex;
+  justify-content: space-around;
   list-style: none;
   align-items: center;
 }
@@ -240,7 +242,7 @@ h6 {
 
 .navbar>ul>li {
   white-space: nowrap;
-  padding: 0.5rem 2rem 0.5rem 2rem;
+  /* padding: 0.5rem 2rem 0.5rem 2rem; */
   /* padding: 10px 0 10px 12px; */
 }
 
@@ -264,6 +266,10 @@ h6 {
   font-size: 12px;
   line-height: 0;
   margin-left: 5px;
+}
+
+.navbar>ul>li>a {
+  color: white;
 }
 
 .navbar>ul>li>a:before {
@@ -1669,9 +1675,9 @@ h6 {
   color: #ddd;
 }
 
-.background-section{
+.background-section {
   height: 6rem;
-  background:rgba(6, 12, 34, 0.8);
+  background: rgba(6, 12, 34, 0.8);
 }
 
 /* .background-section::before {
@@ -1684,6 +1690,35 @@ h6 {
   right: 0;
 } */
 
-.item-img{
+.item-img {
   height: 100vh;
 }
+
+/**/
+.carousel-item{
+  max-height: 100vh;
+}
+.item-control{
+  font-size: 2.5rem;
+  color: #e52022;
+}
+
+/* 320px Celular VGA*/
+@media screen and (max-width: 20rem) {}
+
+/* 321px y 640px CELULARES HD*/
+@media only screen and (min-width: 20.0625rem) and (max-width: 40rem) {
+  .navbar>ul>li>a {
+    color: #060c22;
+  }
+}
+
+/*  641px y 1024px CELULARES FULL HD*/
+@media only screen and (min-width: 40.0625rem) and (max-width: 64rem) {
+  .navbar>ul>li>a {
+    color: #060c22;
+  }
+}
+
+/* 1025px a mas */
+@media only screen and (min-width: 64.0625rem) {}

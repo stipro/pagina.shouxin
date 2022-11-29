@@ -44,7 +44,7 @@
             <div id="logo" class="me-auto">
                 <!-- Uncomment below if you prefer to use a text logo -->
                 <!-- <h1><a href="index.html">The<span>Event</span></a></h1>-->
-                <a href="index.html" class="scrollto"><img src="assets/img/shouxin-rm.png" alt="" title="" style="position: fixed;bottom: 1rem;"></a>
+                <a href="index.html" class="scrollto"><img src="assets/img/isotipo-shouxin.png" alt="" title="" style="position: fixed;bottom: 1rem;"></a>
             </div>
             <?php require_once './navbar.php'; ?>
             <!-- .navbar -->
@@ -55,58 +55,36 @@
 
 
     <section>
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            </div>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./img/1.JPG" class="d-block w-100 item-img" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <!-- <h5>Bienvenido</h5> -->
-                        <!-- <p>Minera SHOUXIN PERU S.A.</p> -->
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="./img/2.JPG" class="d-block w-100 item-img" alt="...">
-                   <!--  <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div> -->
-                </div>
-                <div class="carousel-item">
-                    <img src="./img/3.JPG" class="d-block w-100 item-img" alt="...">
+                    <img src="./img/1.JPG" class="d-block w-100 min-vh-100" alt="...">
                     <!-- <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                        <h5>Bienvenido</h5>
+                        <p>Minera SHOUXIN PERU S.A.</p>
                     </div> -->
                 </div>
                 <div class="carousel-item">
-                    <img src="./img/4.JPG" class="d-block w-100 item-img" alt="...">
-                    <!-- <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div> -->
+                    <img src="./img/2.JPG" class="d-block w-100 min-vh-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="./img/5.JPG" class="d-block w-100 item-img" alt="...">
-                    <!-- <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div> -->
+                    <img src="./img/3.JPG" class="d-block w-100 min-vh-100" alt="...">
                 </div>
-
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                <span>
+                    <i class="bi bi-arrow-left-circle item-control" aria-hidden="true"></i>
+                </span>
+
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+                <span>
+                    <i class="bi bi-arrow-right-circle item-control" aria-hidden="true"></i>
+                </span>
+
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
@@ -129,7 +107,7 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-info">
-                        <img src="assets/img/logo.png" alt="TheEvenet">
+                        <img src="assets/img/Logo-con-fondito-blanco.png" alt="TheEvenet">
                         <!-- <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et
                             totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id
                             quis. In inventore consequatur ad voluptate cupiditate debitis accusamus repellat cumque.

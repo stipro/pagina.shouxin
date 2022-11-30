@@ -17,7 +17,6 @@
             </ul>
         </li>
         <li><a class="nav-link scrollto" href="#">Intranet</a></li>
-        <li><a class="nav-link scrollto" href=""></a></li>
     </ul>
-    <i class="bi bi-list mobile-nav-toggle"></i>
+    <i class="ms-4 bi bi-list mobile-nav-toggle"></i>
 </nav><!-- .navbar -->

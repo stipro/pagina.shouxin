@@ -42,7 +42,6 @@ $val_address = $_POST['address'] ? $_POST['address'] : '';
 $val_email = $_POST['email'] ? $_POST['email'] : '';
 $val_typeofcomplaint = $_POST['typeofcomplaint'] ? $_POST['typeofcomplaint'] : '';
 $val_lift = $_POST['lift'] ? $_POST['lift'] : '';
-echo 'Final Feliz :D';
 $rptSql = $actoCorrupcion->insert(
 
     $val_acceptedTerms,
@@ -82,5 +81,3 @@ for ($i = 0; $i < $conteo; $i++) {
         return;
     }
 }
-
-var_dump($rptSql);

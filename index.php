@@ -44,7 +44,7 @@
             <div id="logo" class="me-auto">
                 <!-- Uncomment below if you prefer to use a text logo -->
                 <!-- <h1><a href="index.html">The<span>Event</span></a></h1>-->
-                <a href="index.html" class="scrollto"><img src="assets/img/isotipo-shouxin.png" alt="" title="" style="position: fixed;bottom: 1rem;"></a>
+                <!-- <a href="index.html" class="scrollto"><img src="assets/img/isotipo-shouxin.png" alt="" title="" style="position: fixed;bottom: 1rem;"></a> -->
             </div>
             <?php require_once './navbar.php'; ?>
             <!-- .navbar -->

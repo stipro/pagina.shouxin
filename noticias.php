@@ -38,7 +38,7 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center ">
-    <div class="container-fluid container-xxl d-flex align-items-center">
+    <div class=" d-flex align-items-center">
 
       <div id="logo" class="me-auto">
         <!-- Uncomment below if you prefer to use a text logo -->
@@ -46,7 +46,8 @@
         <a href="index.html" class="scrollto"><img src="assets/img/logo.png" alt="" title=""></a>
       </div>
 
-      <?php require_once './navbar.php'; ?><!-- .navbar -->
+      <?php require_once './navbar.php'; ?>
+      <!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
@@ -54,7 +55,7 @@
   <main id="main">
 
     <!-- ======= Speakers Section ======= -->
-    <section id="speakers">
+    <section id="speakers" class="mt-5">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Noticias</h2>
@@ -63,16 +64,10 @@
         <div class="row">
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/speakers/1.jpg" alt="Speaker 1" class="img-fluid">
+              <img src="./assets/img/noticias/dia-internacion-mujer.jpg" alt="Speaker 1" class="img-fluid">
               <div class="details">
-                <h3><a href="speaker-details.html">Brenden Legros</a></h3>
-                <p>Quas alias incidunt</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
+                <h3><a href="speaker-details.html">Día Internacional de la Mujer</a></h3>
+                <p>23 de noviembre 2022</p>
               </div>
             </div>
           </div>
@@ -80,14 +75,8 @@
             <div class="speaker" data-aos="fade-up" data-aos-delay="200">
               <img src="assets/img/speakers/2.jpg" alt="Speaker 2" class="img-fluid">
               <div class="details">
-                <h3><a href="speaker-details.html">Hubert Hirthe</a></h3>
+                <h3><a href="speaker-details.html">Día Internacional del Hombre y Día Internacional de la Mujer</a></h3>
                 <p>Consequuntur odio aut</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
               </div>
             </div>
           </div>

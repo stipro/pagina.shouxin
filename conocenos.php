@@ -196,7 +196,7 @@
                             <div class="hotel-img">
                                 <img src="assets/img/hotels/2.jpg" alt="Hotel 2" class="img-fluid">
                             </div>
-                            <h3><a href="#">Hotel 2</a></h3>
+                            <h3><a href="#">Código de conducta para Socios Comerciales </a></h3>
                             <div class="stars">
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>

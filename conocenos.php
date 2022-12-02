@@ -77,9 +77,6 @@
                                                 <h5 class="pt-2">Event One</h5>
                                                 <p class="text-muted">It will be as simple as occidental in fact it will be Occidental Cambridge
                                                     friend</p>
-                                                <div>
-                                                    <a href="#" class="btn btn-primary btn-sm">Read more</a>
-                                                </div>
                                             </div>
                                         </li>
                                         <li class="list-inline-item items-list">
@@ -88,9 +85,6 @@
                                                 <h5 class="pt-2">Event Two</h5>
                                                 <p class="text-muted">Everyone realizes why a new common language one could refuse translators.
                                                 </p>
-                                                <div>
-                                                    <a href="#" class="btn btn-primary btn-sm">Read more</a>
-                                                </div>
                                             </div>
                                         </li>
                                         <li class="list-inline-item items-list">
@@ -99,9 +93,6 @@
                                                 <h5 class="pt-2">Event Three</h5>
                                                 <p class="text-muted">If several languages coalesce the grammar of the resulting simple and
                                                     regular</p>
-                                                <div>
-                                                    <a href="#" class="btn btn-primary btn-sm">Read more</a>
-                                                </div>
                                             </div>
                                         </li>
                                         <li class="list-inline-item items-list">
@@ -110,9 +101,6 @@
                                                 <h5 class="pt-2">Event Four</h5>
                                                 <p class="text-muted">Languages only differ in their pronunciation and their most common words.
                                                 </p>
-                                                <div>
-                                                    <a href="#" class="btn btn-primary btn-sm">Read more</a>
-                                                </div>
                                             </div>
                                         </li>
                                     </ul>
@@ -185,7 +173,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="hotel">
                             <div class="hotel-img">
-                                <img src="./assets/img/policies/conducta-empresarial.jpg" alt="Hotel 1" class="img-fluid">
+                                <img src="./assets/img/policies/conducta-empresarial.jpg" alt="conducta empresarial" class="img-fluid">
                             </div>
                             <h3><a href="#">Principios de conducta empresarial </a></h3>
                         </div>
@@ -194,33 +182,90 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="hotel">
                             <div class="hotel-img">
-                                <img src="assets/img/hotels/2.jpg" alt="Hotel 2" class="img-fluid">
+                                <img src="./assets/img/policies/conducta-socios.jpg" alt="Código de conducta" class="img-fluid">
                             </div>
                             <h3><a href="#">Código de conducta para Socios Comerciales </a></h3>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill-half-full"></i>
-                            </div>
-                            <p>0.5 Mile from the Venue</p>
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6">
                         <div class="hotel">
                             <div class="hotel-img">
-                                <img src="assets/img/hotels/3.jpg" alt="Hotel 3" class="img-fluid">
+                                <img src="./assets/img/policies/anticorrupcion.jpg" alt="Política anticorrupción" class="img-fluid">
                             </div>
-                            <h3><a href="#">Hotel 3</a></h3>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
+                            <h3><a href="#">Política anticorrupción</a></h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hotel">
+                            <div class="hotel-img">
+                                <img src="./assets/img/policies/conducta-empresarial.jpg" alt="conducta empresarial" class="img-fluid">
                             </div>
-                            <p>0.6 Mile from the Venue</p>
+                            <h3><a href="#">Política de calidad</a></h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hotel">
+                            <div class="hotel-img">
+                                <img src="./assets/img/policies/conducta-empresarial.jpg" alt="conducta empresarial" class="img-fluid">
+                            </div>
+                            <h3><a href="#">Política de seguridad y salud</a></h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hotel">
+                            <div class="hotel-img">
+                                <img src="./assets/img/policies/conducta-empresarial.jpg" alt="conducta empresarial" class="img-fluid">
+                            </div>
+                            <h3><a href="#">Política de Desempeño Social</a></h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hotel">
+                            <div class="hotel-img">
+                                <img src="./assets/img/policies/conducta-empresarial.jpg" alt="conducta empresarial" class="img-fluid">
+                            </div>
+                            <h3><a href="#">Política de medio ambiente</a></h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hotel">
+                            <div class="hotel-img">
+                                <img src="./assets/img/policies/conducta-empresarial.jpg" alt="conducta empresarial" class="img-fluid">
+                            </div>
+                            <h3><a href="#">Política de derechos humanos</a></h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hotel">
+                            <div class="hotel-img">
+                                <img src="./assets/img/policies/conducta-empresarial.jpg" alt="conducta empresarial" class="img-fluid">
+                            </div>
+                            <h3><a href="#">Código de conducta de la SNMPE</a></h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hotel">
+                            <div class="hotel-img">
+                                <img src="./assets/img/policies/conducta-empresarial.jpg" alt="conducta empresarial" class="img-fluid">
+                            </div>
+                            <h3><a href="#">Política de Suministro Responsable de Minerales</a></h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hotel">
+                            <div class="hotel-img">
+                                <img src="./assets/img/policies/conducta-empresarial.jpg" alt="conducta empresarial" class="img-fluid">
+                            </div>
+                            <h3><a href="#">Política de Inclusión y Diversidad</a></h3>
                         </div>
                     </div>
 
@@ -233,12 +278,26 @@
         <section id="speakers" class="mt-5">
             <div class="container" data-aos="fade-up">
                 <div class="section-header">
-                    <h2>Politicas</h2>
+                    <h2>Impacto Ambiental</h2>
                 </div>
 
                 <div class="row">
 
-                    <p>Estas aseguran que nuestras actividades se desarrollen respetando al medio ambiente, la integridad de nuestros trabajadores, las costumbres de las ciudades y distritos vecinos, así como el cumplimiento de las normas y las leyes nacionales e internacionales.</p>
+
+                </div>
+            </div>
+
+        </section><!-- End Speakers Section -->
+
+        <!-- ======= Speakers Section ======= -->
+        <section id="speakers" class="mt-5">
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <h2>Impacto Laboral</h2>
+                </div>
+
+                <div class="row">
+
 
                 </div>
             </div>

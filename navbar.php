@@ -8,12 +8,12 @@ $urlPart = explode("/", $url);
         <!-- <li><a class="nav-link scrollto active" href="./">Ínicio</a></li> -->
 
         <li><a <?php if ($urlPart[2] == '') : ?> class="nav-link scrollto active" <?php else : ?> class="nav-link scrollto text-body" <?php endif; ?> href="./">Ínicio</a></li>
-        <li><a <?php if ($urlPart[2] == 'conocenos.php') : ?> class="nav-link scrollto text-body active" <?php else : ?> class="nav-link scrollto text-body" <?php endif; ?> href="./conocenos.php">Conócenos</a></li>
-        <li><a <?php if ($urlPart[2] == 'responsabilidadsocial.php') : ?> class="nav-link scrollto active" <?php else : ?> class="nav-link scrollto text-body" <?php endif; ?> href="#">Responsabildad Social</a></li>
-        <li><a <?php if ($urlPart[2] == 'noticias.php') : ?> class="nav-link scrollto text-body active" <?php else : ?> class="nav-link scrollto text-body" <?php endif; ?> href="./noticias.php">Noticias</a></li>
-        <li><a <?php if ($urlPart[2] == 'trabajconnosotros.php') : ?> class="nav-link scrollto active" <?php else : ?> class="nav-link scrollto text-body" <?php endif; ?> href="#">Trabaja con Nosotros</a></li>
+        <li><a <?php if ($urlPart[2] == 'conocenos.php') : ?> class="nav-link scrollto text-body active" <?php else : ?> class="nav-link scrollto" <?php endif; ?> href="./conocenos.php">Conócenos</a></li>
+        <li><a <?php if ($urlPart[2] == 'responsabilidadsocial.php') : ?> class="nav-link scrollto text-body active" <?php else : ?> class="nav-link scrollto" <?php endif; ?> href="#">Responsabildad Social</a></li>
+        <li><a <?php if ($urlPart[2] == 'noticias.php') : ?> class="nav-link scrollto text-body active" <?php else : ?> class="nav-link scrollto" <?php endif; ?> href="./noticias.php">Noticias</a></li>
+        <li><a <?php if ($urlPart[2] == 'trabajconnosotros.php') : ?> class="nav-link scrollto active" <?php else : ?> class="nav-link scrollto" <?php endif; ?> href="#">Trabaja con Nosotros</a></li>
         <li class="dropdown">
-            <a class="text-body" href="#"><span>Canal de Denuncias</span> <i class="bi bi-chevron-down text-body"></i></a>
+            <a href="#"><span>Canal de Denuncias</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
                 <li><a href="./actoscorrupcion.php">Acto de corrupción/Otros</a></li>
                 <li><a href="./hostigamientosexual.php">Denuncias sobre Hostigamiento Laboral</a></li>
@@ -24,7 +24,7 @@ $urlPart = explode("/", $url);
                 </li>
             </ul>
         </li>
-        <li><a <?php if ($urlPart[2] == 'intranet.php') : ?> class="nav-link scrollto active" <?php else : ?> class="nav-link scrollto text-body" <?php endif; ?> href="#">Intranet</a></li>
+        <li><a <?php if ($urlPart[2] == 'intranet.php') : ?> class="nav-link scrollto active" <?php else : ?> class="nav-link scrollto" <?php endif; ?> href="#">Intranet</a></li>
     </ul>
     <i class="ms-4 bi bi-list mobile-nav-toggle"></i>
 </nav><!-- .navbar -->

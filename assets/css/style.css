@@ -252,9 +252,12 @@ h6 {
   align-items: center;
   justify-content: space-between;
   color: rgba(202, 206, 221, 0.8);
-  font-family: "Raleway", sans-serif;
+  font-family: GothamBook;
+  font-weight: 800;
+  font-size: 16px;
+  /* font-family: "Raleway", sans-serif;
   font-weight: 200;
-  font-size: 14px;
+  font-size: 14px; */
   white-space: nowrap;
   transition: 0.3s;
   position: relative;

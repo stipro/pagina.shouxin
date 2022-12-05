@@ -1,5 +1,8 @@
 <?php
 header('Content-type: application/json; charset=utf-8');
+
+$rptController = array();
+
 // Verficar envio POST
 if (!$_POST) {
     return;
@@ -7,27 +10,48 @@ if (!$_POST) {
 
 // Verificar aceptación de terminos
 if ($_POST['acceptedTerms'] != 1) {
-    echo 'No acepto Términos y Condiciones';
+    $rptController["status"] = 404;
+    $rptController["msg"] = 'No acepto Términos y Condiciones';
+    echo json_encode($rptController);
     return;
 }
 
 // Verificar Anonimato
 if ($_POST['anonymityactCorruption'] != 'Si') {
+    $verifyForm = FALSE;
     if (!$_POST['namesSurnames']) {
-        echo 'Falta ingresar Nombre y apellido';
+        $verifyForm = TRUE;
+        /* echo 'Falta ingresar Nombre y apellido'; */
     }
     if (!$_POST['dni']) {
-        echo 'Falta ingresar DNI';
+        $verifyForm = TRUE;
+        /* echo 'Falta ingresar DNI'; */
     }
     if (!$_POST['cellphone']) {
-        echo 'Falta ingresar Telefono';
+        $verifyForm = TRUE;
+        /* echo 'Falta ingresar Telefono'; */
     }
     if (!$_POST['address']) {
-        echo 'Falta ingresar Dirección';
+        $verifyForm = TRUE;
+        /* echo 'Falta ingresar Dirección'; */
     }
     if (!$_POST['email']) {
-        echo 'Falta ingresar Correo';
+        $verifyForm = TRUE;
+        /* echo 'Falta ingresar Correo'; */
     }
+    if ($verifyForm) {
+        $rptController["status"] = 404;
+        $rptController["msg"] = 'Falta un dato';
+        echo json_encode($rptController);
+        return;
+    };
+}
+
+if (!$_POST['lift']) {
+    $rptController["status"] = 404;
+    $rptController["msg"] = 'Falta sustento';
+    echo json_encode($rptController);
+    return;
 }
 
 require_once '../models/actosCorrupcion.php';
@@ -42,8 +66,8 @@ $val_address = $_POST['address'] ? $_POST['address'] : '';
 $val_email = $_POST['email'] ? $_POST['email'] : '';
 $val_typeofcomplaint = $_POST['typeofcomplaint'] ? $_POST['typeofcomplaint'] : '';
 $val_lift = $_POST['lift'] ? $_POST['lift'] : '';
-$rptSql = $actoCorrupcion->insert(
 
+$rptSql = $actoCorrupcion->insert(
     $val_acceptedTerms,
     $val_anonymityactCorruption,
     $val_namesSurnames,
@@ -81,3 +105,7 @@ for ($i = 0; $i < $conteo; $i++) {
         return;
     }
 }
+
+$rptController["status"] = 201;
+$rptController["msg"] = 'Se registro correctamente';
+echo json_encode($rptController);

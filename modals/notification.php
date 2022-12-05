@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="mdNotification" tabindex="-1" aria-labelledby="mdNotificationLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
             <!-- <div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

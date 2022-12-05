@@ -17,6 +17,8 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
+    <link href="//db.onlinewebfonts.com/c/924ee4158324c02e3e0d62e54cafd14f?family=Gotham+Book" rel="stylesheet" type="text/css"/>
+
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -80,7 +82,7 @@
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                 <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
                 <span>
-                    <i class="bi bi-arrow-left-circle item-control" aria-hidden="true"></i>
+                    <i class="bi bi-chevron-double-left item-control" aria-hidden="true"></i>
                 </span>
 
                 <span class="visually-hidden">Previous</span>
@@ -88,7 +90,7 @@
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
                 <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
                 <span>
-                    <i class="bi bi-arrow-right-circle item-control" aria-hidden="true"></i>
+                    <i class="bi bi-chevron-double-right item-control" aria-hidden="true"></i>
                 </span>
 
                 <span class="visually-hidden">Next</span>

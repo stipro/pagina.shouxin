@@ -1760,6 +1760,11 @@ h6 {
   .navbar>ul>li>a {
     color: #060c22;
   }
+
+  .card-canal-noticias {
+    padding: 0 5em 1.5rem 5rem;
+  }
+
 }
 
 /*  641px y 1024px CELULARES FULL HD*/
@@ -1767,7 +1772,28 @@ h6 {
   .navbar>ul>li>a {
     color: #060c22;
   }
+
+  .card-canal-noticias {
+    padding: 0 1em 1.5rem 1rem;
+  }
 }
 
 /* 1025px a mas */
 @media only screen and (min-width: 64.0625rem) {}
+
+
+
+.container-card-canal-noticias {
+  height: 15rem;
+}
+
+.img-canal-denuncias {
+  height: 50%;
+}
+
+.text-canal-denuncias {
+  height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

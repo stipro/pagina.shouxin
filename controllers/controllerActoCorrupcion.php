@@ -89,22 +89,52 @@ $val_lastRow = $lastRow[0]['lastRow'];
 $path_actscorruption = './../sistema/assets/uploads/actoCorrupcion/case' . $val_lastRow . '/';
 
 if (!file_exists($path_actscorruption)) {
-    echo 'No existe carpeta, se va crear carpeta';
+    $rptController["msg2"] = 'No existe carpeta, se va crear carpeta';
     mkdir($path_actscorruption, 0777, true);
 }
 
 $conteo = count($_FILES["file"]["name"]);
+$listArchiveNew;
 for ($i = 0; $i < $conteo; $i++) {
     $ubicacionTemporal = $_FILES["file"]["tmp_name"][$i];
     $nombreArchivo = $_FILES["file"]["name"][$i];
     $extension = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
     // Renombrar archivo
     $nuevoNombre = sprintf("%s.%s", uniqid(), $extension);
+    // Almacena lista de archivos renombrados
+    $listArchiveNew[] = $nuevoNombre;
     // Mover del temporal al directorio actual
     if (!move_uploaded_file($ubicacionTemporal, $path_actscorruption . $nuevoNombre)) {
         return;
     }
 }
+// Declaramos el nombre del archivo comprimido
+$name_zip = 'case' . $val_lastRow . '.zip';
+
+// Instanciamos la clase, esta viene en el paquete de PHP
+$mizip = new ZipArchive();
+$mizip->open($name_zip, ZipArchive::CREATE);
+
+var_dump($listArchiveNew);
+
+// Agregamos los archivos a comprimir
+foreach ($listArchiveNew as $nuevo) {
+    $parth_new = './../sistema/assets/uploads/actoCorrupcion/case' . $val_lastRow . '/' . $nuevo;
+    var_dump($parth_new);
+    /* Removemos la palabra 'download/', ya que si no hacemos esto
+     * va a crear el zip dentro de una carpeta llamada download
+     * Tip: si queremos crear archivos comprimidos dentro de carpetas
+     * ya saben como hacerlo ;) */
+    $mizip->addFile($parth_new, str_replace('download/', '', $parth_new));
+}
+
+$mizip->close();
+
+// Generar la descarga en el navegador
+header('Content-Type: application/zip');
+header('Content-disposition: attachment; filename=' . $name_zip);
+header('Content-Length: ' . filesize($name_zip));
+readfile($name_zip);
 
 $rptController["status"] = 201;
 $rptController["msg"] = 'Se registro correctamente';

@@ -86,7 +86,7 @@ if (!$rptSql) {
 // Obtener ultimo registro
 $lastRow = $actoCorrupcion->getLast_row();
 $val_lastRow = $lastRow[0]['lastRow'];
-$path_actscorruption = './../uploads/actoCorrupcion/case' . $val_lastRow . '/';
+$path_actscorruption = './../sistema/assets/uploads/actoCorrupcion/case' . $val_lastRow . '/';
 
 if (!file_exists($path_actscorruption)) {
     echo 'No existe carpeta, se va crear carpeta';

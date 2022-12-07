@@ -16,7 +16,8 @@ class actosCorrupcion extends Conexion
         string $val_address,
         string $val_email,
         string $val_typeofcomplaint,
-        string $val_lift
+        string $val_lift,
+        int $valArchive
     ) {
 
         try {
@@ -29,7 +30,8 @@ class actosCorrupcion extends Conexion
                 direccion_actoCorrupcion,
                 correo_actoCorrupcion,
                 tipoDenuncia_actoCorrupcion,
-                sustento_actoCorrupcion
+                sustento_actoCorrupcion,
+                medioProbatorio_actoCorrupcion
                 ) VALUES (
                 :autorizacionUsoDatos_actoCorrupcion,
                 :denunciaAnonima_actoCorrupcion,
@@ -39,7 +41,8 @@ class actosCorrupcion extends Conexion
                 :direccion_actoCorrupcion,
                 :correo_actoCorrupcion,
                 :tipoDenuncia_actoCorrupcion,
-                :sustento_actoCorrupcion)";
+                :sustento_actoCorrupcion,
+                :medioProbatorio_actoCorrupcion)";
             $result = $this->db->prepare($query);
             $result->execute(
                 array(
@@ -51,7 +54,8 @@ class actosCorrupcion extends Conexion
                     ':direccion_actoCorrupcion' => $val_address,
                     ':correo_actoCorrupcion' => $val_email,
                     ':tipoDenuncia_actoCorrupcion' => $val_typeofcomplaint,
-                    ':sustento_actoCorrupcion' => $val_lift
+                    ':sustento_actoCorrupcion' => $val_lift,
+                    ':medioProbatorio_actoCorrupcion' => $valArchive
                 )
             );
 

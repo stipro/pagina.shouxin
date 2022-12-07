@@ -67,6 +67,10 @@ $val_email = $_POST['email'] ? $_POST['email'] : '';
 $val_typeofcomplaint = $_POST['typeofcomplaint'] ? $_POST['typeofcomplaint'] : '';
 $val_lift = $_POST['lift'] ? $_POST['lift'] : '';
 
+
+
+$valArchive = (!$_FILES["file"]["name"][0]) ? 0 : 1;
+
 $rptSql = $actoCorrupcion->insert(
     $val_acceptedTerms,
     $val_anonymityactCorruption,
@@ -76,7 +80,8 @@ $rptSql = $actoCorrupcion->insert(
     $val_address,
     $val_email,
     $val_typeofcomplaint,
-    $val_lift
+    $val_lift,
+    $valArchive
 );
 
 if (!$rptSql) {
@@ -93,8 +98,9 @@ if (!file_exists($path_actscorruption)) {
     mkdir($path_actscorruption, 0777, true);
 }
 
-$conteo = count($_FILES["file"]["name"]);
+
 $listArchiveNew;
+$conteo = count($_FILES["file"]["name"]);
 for ($i = 0; $i < $conteo; $i++) {
     $ubicacionTemporal = $_FILES["file"]["tmp_name"][$i];
     $nombreArchivo = $_FILES["file"]["name"][$i];
@@ -115,17 +121,11 @@ $name_zip = 'case' . $val_lastRow . '.zip';
 $mizip = new ZipArchive();
 $mizip->open($name_zip, ZipArchive::CREATE);
 
-var_dump($listArchiveNew);
-
 // Agregamos los archivos a comprimir
 foreach ($listArchiveNew as $nuevo) {
     $parth_new = './../sistema/assets/uploads/actoCorrupcion/case' . $val_lastRow . '/' . $nuevo;
-    var_dump($parth_new);
-    /* Removemos la palabra 'download/', ya que si no hacemos esto
-     * va a crear el zip dentro de una carpeta llamada download
-     * Tip: si queremos crear archivos comprimidos dentro de carpetas
-     * ya saben como hacerlo ;) */
-    $mizip->addFile($parth_new, str_replace('download/', '', $parth_new));
+
+    $mizip->addFile($parth_new, str_replace('./../sistema/assets/uploads/actoCorrupcion/', '', $parth_new));
 }
 
 $mizip->close();
@@ -135,6 +135,9 @@ header('Content-Type: application/zip');
 header('Content-disposition: attachment; filename=' . $name_zip);
 header('Content-Length: ' . filesize($name_zip));
 readfile($name_zip);
+
+//Movemos Archivo
+rename($name_zip, $path_actscorruption . $name_zip);
 
 $rptController["status"] = 201;
 $rptController["msg"] = 'Se registro correctamente';

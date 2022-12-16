@@ -8,14 +8,6 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-@import url(//db.onlinewebfonts.com/c/924ee4158324c02e3e0d62e54cafd14f?family=Gotham+Book);
-
-@font-face {
-  font-family: "GothamBook";
-  src: url("//db.onlinewebfonts.com/t/924ee4158324c02e3e0d62e54cafd14f.eot");
-  src: url("//db.onlinewebfonts.com/t/924ee4158324c02e3e0d62e54cafd14f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/924ee4158324c02e3e0d62e54cafd14f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/924ee4158324c02e3e0d62e54cafd14f.woff") format("woff"), url("//db.onlinewebfonts.com/t/924ee4158324c02e3e0d62e54cafd14f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/924ee4158324c02e3e0d62e54cafd14f.svg#Gotham Book") format("svg");
-}
-
 body {
   background: #fff;
   color: #2f3138;
@@ -158,7 +150,7 @@ h6 {
 
 #header.header-scrolled,
 #header.header-inner {
-  /* rgba(6, 12, 34, 0.98);*/
+  background: rgba(6, 12, 34, 0.98);
   height: 70px;
 }
 
@@ -166,7 +158,7 @@ h6 {
   font-size: 36px;
   margin: 0;
   font-family: "Raleway", sans-serif;
-  font-weight: 200;
+  font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
@@ -183,12 +175,12 @@ h6 {
 #header #logo img {
   padding: 0;
   margin: 0;
-  max-height: 4rem;
+  max-height: 40px;
 }
 
 @media (max-width: 992px) {
   #header #logo img {
-    max-height: 4rem;
+    max-height: 30px;
   }
 }
 
@@ -235,11 +227,9 @@ h6 {
 }
 
 .navbar ul {
-  width: 100vw;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-around;
   list-style: none;
   align-items: center;
 }
@@ -250,8 +240,7 @@ h6 {
 
 .navbar>ul>li {
   white-space: nowrap;
-  /* padding: 0.5rem 2rem 0.5rem 2rem; */
-  /* padding: 10px 0 10px 12px; */
+  padding: 10px 0 10px 12px;
 }
 
 .navbar a,
@@ -260,12 +249,9 @@ h6 {
   align-items: center;
   justify-content: space-between;
   color: rgba(202, 206, 221, 0.8);
-  font-family: GothamBook;
-  font-weight: 400;
-  font-size: 16px;
-  /* font-family: "Raleway", sans-serif;
-  font-weight: 200;
-  font-size: 14px; */
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
   white-space: nowrap;
   transition: 0.3s;
   position: relative;
@@ -277,10 +263,6 @@ h6 {
   font-size: 12px;
   line-height: 0;
   margin-left: 5px;
-}
-
-.navbar>ul>li>a {
-  color: white;
 }
 
 .navbar>ul>li>a:before {
@@ -495,7 +477,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url(../img/under-construction.png) top center;
+  background: url(./../img/Inicio/1.JPG) top center;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -1684,124 +1666,4 @@ h6 {
   text-align: center;
   font-size: 13px;
   color: #ddd;
-}
-
-.background-section {
-  height: 6rem;
-  background: rgba(6, 12, 34, 0.8);
-}
-
-/* .background-section::before {
-  content: "";
-  background: rgba(6, 12, 34, 0.8);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-} */
-
-.item-img {
-  height: 100vh;
-}
-
-/**/
-.carousel-item {
-  max-height: 100vh;
-}
-
-.item-control {
-  font-size: 2.5rem;
-  color: #e52022;
-}
-
-/* Line de Tiempo */
-
-.horizontal-timeline .items {
-  border-top: 3px solid #e9ecef;
-}
-
-.horizontal-timeline .items .items-list {
-  display: block;
-  position: relative;
-  text-align: center;
-  padding-top: 70px;
-  margin-right: 0;
-}
-
-.horizontal-timeline .items .items-list:before {
-  content: "";
-  position: absolute;
-  height: 36px;
-  border-right: 2px dashed #dee2e6;
-  top: 0;
-}
-
-.horizontal-timeline .items .items-list .event-date {
-  position: absolute;
-  top: 36px;
-  left: 0;
-  right: 0;
-  width: 75px;
-  margin: 0 auto;
-  font-size: 0.9rem;
-  padding-top: 8px;
-}
-
-@media (min-width: 1140px) {
-  .horizontal-timeline .items .items-list {
-    display: inline-block;
-    width: 24%;
-    padding-top: 45px;
-  }
-
-  .horizontal-timeline .items .items-list .event-date {
-    top: -40px;
-  }
-}
-
-/* 320px Celular VGA*/
-@media screen and (max-width: 20rem) {}
-
-/* 321px y 640px CELULARES HD*/
-@media only screen and (min-width: 20.0625rem) and (max-width: 40rem) {
-  .navbar>ul>li>a {
-    color: #060c22;
-  }
-
-  .card-canal-noticias {
-    padding: 0 5em 1.5rem 5rem;
-  }
-
-}
-
-/*  641px y 1024px CELULARES FULL HD*/
-@media only screen and (min-width: 40.0625rem) and (max-width: 64rem) {
-  .navbar>ul>li>a {
-    color: #060c22;
-  }
-
-  .card-canal-noticias {
-    padding: 0 1em 1.5rem 1rem;
-  }
-}
-
-/* 1025px a mas */
-@media only screen and (min-width: 64.0625rem) {}
-
-
-
-.container-card-canal-noticias {
-  height: 15rem;
-}
-
-.img-canal-denuncias {
-  height: 50%;
-}
-
-.text-canal-denuncias {
-  height: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }

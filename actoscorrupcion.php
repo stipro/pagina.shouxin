@@ -50,7 +50,7 @@
             <div id="logo" class="me-auto">
                 <!-- Uncomment below if you prefer to use a text logo -->
                 <!-- <h1><a href="index.html">The<span>Event</span></a></h1>-->
-                <a href="index.html" class="scrollto"><img src="assets/img/logo.png" alt="" title=""></a>
+                <a href="index.html" class="scrollto"><img src="assets/img/Logo-minera-Frank-2-r.png" alt="" title=""></a>
             </div>
             <?php require_once './navbar.php'; ?>
             <!-- .navbar -->
@@ -59,9 +59,6 @@
         </div>
     </header><!-- End Header -->
 
-    <section class="background-section">
-
-    </section>
     <main id="main" class="">
 
         <!-- ======= Contact Section ======= -->
@@ -70,7 +67,7 @@
             <div class="container" data-aos="fade-up">
                 <div class="form">
                     <div class="section-header">
-                        <h2>CANAL DE DENUNCIAS, RECLAMOS Y CONSULTAS MSP</h2>
+                        <h3>CANAL DE DENUNCIAS, RECLAMOS Y CONSULTAS MSP</h3>
                         <!-- <p>Nihil officia ut sint molestiae tenetur.</p> -->
                     </div>
                     <form id="formCreate-actCorruption" class="php-email-form">

@@ -68,7 +68,7 @@
         <!-- ======= Speaker Details Sectionn ======= -->
         <section id="contact">
 
-            <div class="container border bg-light text-dark">
+            <div class="container border bg-light text-dark" data-aos="fade-up">
 
                 <div class="watermark">
                 </div>
@@ -347,6 +347,9 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Base JS File -->
+    <script src="assets/js/base.js"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/actoCorrupcion.js"></script>

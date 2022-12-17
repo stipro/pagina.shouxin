@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="section-header mt-5">
-                    <h2>Denuncias o queja por acto de hostigamiento sexual</h2>
+                    <h2>Denuncias o Reclamo Laboral</h2>
                     <p>CANAL DE DENUNCIAS, RECLAMOS Y CONSULTAS MSP</p>
                 </div>
 

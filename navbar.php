@@ -17,7 +17,7 @@ $urlPart = explode("/", $url);
             <ul>
                 <li><a href="./actoscorrupcion.php">Acto de corrupción/Otros</a></li>
                 <li><a href="./hostigamientosexual.php">Denuncias sobre Hostigamiento Laboral</a></li>
-                <li><a href="#">Denuncia/Reclamo Laboral</a></li>
+                <li><a href="./reclamolaboral.php">Denuncia/Reclamo Laboral</a></li>
                 <li><a href="./relacionescomunitarias.php">Consulta/Denuncia/Reclamos al cumplimiento <br>de pacto de Relaciones
                         comunitarias</a></li>
                 <li><a href="./prevencioncontrol.php">Prevención y Control del Sistema Anticorrupción</a>

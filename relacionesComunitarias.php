@@ -25,6 +25,9 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
+    <link href="assets/css/base.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- Toastr css -->
@@ -68,6 +71,9 @@
         <section id="contact">
 
             <div class="container border bg-light text-dark" data-aos="fade-up">
+
+                <div class="watermark">
+                </div>
 
                 <div class="section-header mt-5">
                     <h2>Consulta/ Denuncias/ Reclamos al Cumplimiento de Pacto de Relaciónes</h2>

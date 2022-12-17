@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Minera Shouxin Peru S.A.</title>
+    <title>Minera Shouxin Peru S.A. - Denuncias o queja por acto de hostigamiento sexual</title>
     <meta content="Minera Nazca" name="description">
     <meta content="" name="keywords">
 

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Minera Shouxin Peru S.A.</title>
+    <title>Minera Shouxin Peru S.A. - Consulta/ Denuncias/ Reclamos al Cumplimiento de Pacto de Relaciónes</title>
     <meta content="Minera Nazca" name="description">
     <meta content="" name="keywords">
 
@@ -44,12 +44,12 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <header id="header" class="d-flex align-items-center ">
+    <header id="header" class="d-flex align-items-center header-inner">
         <div class="container-fluid container-xxl d-flex align-items-center">
 
             <div id="logo" class="me-auto">
                 <!-- Uncomment below if you prefer to use a text logo -->
-                <a href="index.html" class="scrollto"><img src="assets/img/logo.png" alt="" title=""></a>
+                <a href="index.html" class="scrollto"><img src="assets/img/Logo-minera-Frank-2-r.png" alt="" title=""></a>
             </div>
 
             <?php require_once './navbar.php'; ?>
@@ -62,17 +62,19 @@
     <section class="background-section">
 
     </section>
-    <main id="main" class="">
+    <main id="main" class="main-page" style="background-image: url('./assets/img/inicio/1.JPG');">
 
         <!-- ======= Contact Section ======= -->
-        <section id="contact" class="section-bg">
+        <section id="contact">
 
-            <div class="container" data-aos="fade-up">
-                <div class="form">
-                    <div class="section-header">
-                        <h2>CONSULTA/ DENUNCIAS/ RECLAMOS AL CUMPLIENTO DE PACTO DE RELACIONES</h2>
-                        <!-- <p>Nihil officia ut sint molestiae tenetur.</p> -->
-                    </div>
+            <div class="container border bg-light text-dark" data-aos="fade-up">
+
+                <div class="section-header mt-5">
+                    <h2>Consulta/ Denuncias/ Reclamos al Cumplimiento de Pacto de Relaciónes</h2>
+                    <p>CANAL DE DENUNCIAS, RECLAMOS Y CONSULTAS MSP</p>
+                </div>
+
+                <div class="row mb-5">
                     <form id="formCreate-actCorruption" class="php-email-form">
                         <div class="mb-3 row">
                             <div class="col-12 col-sm-6 mb-3">
@@ -273,7 +275,6 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <?php require_once 'modals/notification.php'; ?>
-    <?php require_once 'modals/terminosCondiciones.php'; ?>
 
     <!-- scripts necessarios -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -286,7 +287,7 @@
     <!-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+    <script src="assets/vendor/php-email-form/validate.js"></script>
 
     <!-- waitme js -->
     <script src="assets/waitme/waitMe.min.js"></script>
@@ -296,6 +297,9 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Base JS File -->
+    <script src="assets/js/base.js"></script>
 
 </body>
 

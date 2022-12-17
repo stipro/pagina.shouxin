@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Minera Shouxin Peru S.A. - Acto corrupción</title>
-    <meta content="" name="description">
+    <title>Minera Shouxin Peru S.A.</title>
+    <meta content="Minera Nazca" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
@@ -18,15 +18,11 @@
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="assets/css/base.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -48,7 +44,7 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <header id="header" class="d-flex align-items-center header-inner">
+    <header id="header" class="d-flex align-items-center ">
         <div class="container-fluid container-xxl d-flex align-items-center">
 
             <div id="logo" class="me-auto">
@@ -56,30 +52,24 @@
                 <!-- <h1><a href="index.html">The<span>Event</span></a></h1>-->
                 <a href="index.html" class="scrollto"><img src="assets/img/Logo-minera-Frank-2-r.png" alt="" title=""></a>
             </div>
-
             <?php require_once './navbar.php'; ?>
             <!-- .navbar -->
+            <!-- <a class="buy-tickets scrollto" href="#buy-tickets">Buy Tickets</a> -->
 
         </div>
     </header><!-- End Header -->
 
-    <main id="main" class="main-page" style="background-image: url('./assets/img/inicio/1.JPG');">
+    <main id="main">
 
-        <!-- ======= Speaker Details Sectionn ======= -->
-        <section id="contact">
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="section-bg">
 
-            <div class="container border bg-light text-dark">
-
-                <div class="watermark">
-                </div>
-
-                <div class="section-header mt-5">
-                    <h2>Acto de corrupción/Otros</h2>
-                    <p>CANAL DE DENUNCIAS, RECLAMOS Y CONSULTAS MSP</p>
-                </div>
-
-                <div class="row mb-5">
-
+            <div class="container" data-aos="fade-up">
+                <div class="form">
+                    <div class="section-header">
+                        <h3>CANAL DE DENUNCIAS, RECLAMOS Y CONSULTAS MSP</h3>
+                        <!-- <p>Nihil officia ut sint molestiae tenetur.</p> -->
+                    </div>
                     <form id="formCreate-actCorruption" class="php-email-form">
                         <div class="card-body">
                             <h5 class="text-justify fs-6 lh-sm">Canal de Denuncia</h5>
@@ -205,7 +195,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="col-12 col-sm-12 mb-3">
+                                    <div class="col-12 col-sm-6 mb-3">
                                         <div class="form-group">
                                             <label for="typeComplaint-actCorruption" class="control-label form-control-sm form-label">Sustentar hecho<span class="text-danger">*</span></label>
                                             <div class="input-group input-group-sm">
@@ -245,70 +235,32 @@
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-success">Enviar</button>
+                            <button type="submit">Enviar</button>
                         </div>
                     </form>
-
                 </div>
-            </div>
 
-        </section>
+            </div>
+        </section><!-- End Contact Section -->
 
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
+
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-3 col-md-6 footer-info">
-                        <img src="assets/img/Logo-minera-Frank-2-r.png" alt="TheEvenet">
+                        <img src="assets/img/logo.png" alt="TheEvenet">
                     </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Enlaces</h4>
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Inicio</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#about">Sobre nosotros</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <!-- <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul> -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h4>Contacta con nosotros</h4>
-                        <p>
-                            Marcona <br>
-                            Ica<br>
-                            Perú <br>
-                            <strong>Email:</strong> -<br>
-                        </p>
-
-                        <div class="social-links">
-                            <a href="https://es-la.facebook.com/ShouxinPeru/" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <!-- <a href="#" class="google-plus"><i class="bi bi-instagram"></i></a> -->
-                            <a href="https://pe.linkedin.com/company/minera-shouxin-per%C3%BA" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
         </div>
 
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong>Minera Shouxin Peru S.A.</strong>. Reservados todos los derechos
+                &copy; Copyright <strong>Shouxin Peru S.A.</strong>. Todos los derechos reservados
             </div>
             <div class="credits">
                 <!--
@@ -317,7 +269,7 @@
         Licensing information: https://bootstrapmade.com/license/
         Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
       -->
-                Designed by <a href="#">-</a>
+                <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
             </div>
         </div>
     </footer><!-- End  Footer -->
@@ -330,6 +282,7 @@
     <!-- scripts necessarios -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 
     <!-- Vendor JS Files -->
@@ -337,7 +290,7 @@
     <!-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
     <!-- waitme js -->
     <script src="assets/waitme/waitMe.min.js"></script>
@@ -350,6 +303,9 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/actoCorrupcion.js"></script>
+
+    <!-- Template Main JS File -->
+    <!-- <script src="assets/js/subir.js"></script> -->
 
     <script>
         const dt = new DataTransfer(); // Permet de manipuler les fichiers de l'input file

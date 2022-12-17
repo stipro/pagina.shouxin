@@ -7,7 +7,7 @@ $urlPart = explode("/", $url);
     <ul>
         <!-- <li><a class="nav-link scrollto active" href="./">Ínicio</a></li> -->
 
-        <li><a <?php if ($urlPart[2] == '') : ?> class="nav-link scrollto active" <?php else : ?> class="nav-link scrollto text-body" <?php endif; ?> href="./">Ínicio</a></li>
+        <li><a <?php if ($urlPart[2] == '') : ?> class="nav-link scrollto active" <?php else : ?> class="nav-link scrollto" <?php endif; ?> href="./">Ínicio</a></li>
         <li><a <?php if ($urlPart[2] == 'conocenos.php') : ?> class="nav-link scrollto text-body active" <?php else : ?> class="nav-link scrollto" <?php endif; ?> href="#about">Conócenos</a></li>
         <li><a <?php if ($urlPart[2] == 'responsabilidadsocial.php') : ?> class="nav-link scrollto text-body active" <?php else : ?> class="nav-link scrollto" <?php endif; ?> href="#">Responsabildad Social</a></li>
         <li><a <?php if ($urlPart[2] == 'noticias.php') : ?> class="nav-link scrollto text-body active" <?php else : ?> class="nav-link scrollto" <?php endif; ?> href="./noticias.php">Noticias</a></li>

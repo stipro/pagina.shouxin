@@ -63,7 +63,7 @@
         </div>
     </header><!-- End Header -->
 
-    <main id="main" class="main-page" style="background-image: url('./assets/img/inicio/1.JPG');">
+    <main id="main" class="main-page">
 
         <!-- ======= Speaker Details Sectionn ======= -->
         <section id="contact">
@@ -184,19 +184,15 @@
                                             <div class="input-group input-group-sm">
                                                 <select id="insertSlt-documentIdentity-actCorruption" class="form-select form-select-sm custom-select" data-placeholder="Seleccióne Doc. de Indentificación" name="typeofcomplaint">
                                                     <option value="Lavado de Activo">Lavado de Activo</option>
-                                                    <option value="Trafico de Influencias">Trafico de Influencias
-                                                    </option>
+                                                    <option value="Trafico de Influencias">Trafico de Influencias</option>
                                                     <option value="Actos de corrupción">Actos de corrupción</option>
-                                                    <option value="Otros, Especificar">Delito de cohecho</option>
-                                                    <option value="Otros, Especificar">Hostigamiento sexual en el
-                                                        trabajo</option>
-                                                    <option value="Otros, Especificar">Hostigamiento laboral</option>
-                                                    <option value="Otros, Especificar">Incumplimiento de
-                                                        acuerdo/convenio con la comunidad</option>
-                                                    <option value="Otros, Especificar">Delito contra medio Ambiente
-                                                    </option>
+                                                    <option value="Delito de cohecho">Delito de cohecho</option>
+                                                    <option value="No registra a los dueños reales">No registra a los dueños reales</option>
+                                                    <option value="Operaciones financieras y comerciales no justificadas(empresa de fachada)">Operaciones financieras y comerciales no justificadas(empresa de fachada)</option>
+                                                    <option value="Proveedor del Estado que incrementó su patrimonio repetinamente (corrupción)">Proveedor del Estado que incrementó su patrimonio repetinamente (corrupción)</option>
+                                                    <option value="Vinculado a empresas ubicadas en paraisos fiscales donde esconde su dinero">Vinculado a empresas ubicadas en paraisos fiscales donde esconde su dinero</option>
+                                                    <option value="Vinculos con actividades terroristas">Vinculos con actividades terroristas</option>
                                                     <option value="Otros, Especificar">Otros, Especificar</option>
-
                                                 </select>
                                             </div>
                                             <div id="documentIdentity-actCorruption-Help" class="form-text">Eliga una
@@ -355,9 +351,12 @@
     <script src="assets/js/actoCorrupcion.js"></script>
 
     <script>
-        const dt = new DataTransfer(); // Permet de manipuler les fichiers de l'input file
+        const dt = new DataTransfer(); 
+        // Permet de manipuler les fichiers de l'input file
+        // Le permite manipular los archivos del archivo de entrada
 
         $("#formFileSm").on('change', function(e) {
+            //fileBloc.append('<i class="file-delete bi bi-trash3 me-3"></i>')
             for (var i = 0; i < this.files.length; i++) {
                 let fileBloc = $('<a/>', {
                         class: 'file-block list-group-item list-group-item-danger'
@@ -371,26 +370,33 @@
                 $("#filesList").append(fileBloc);
             };
             // Ajout des fichiers dans l'objet DataTransfer
+            // Agregar archivos al objeto DataTransfer
             for (let file of this.files) {
                 dt.items.add(file);
             }
             // Mise à jour des fichiers de l'input file après ajout
+            // Actualización de los archivos del archivo de entrada después de la adición
             this.files = dt.files;
 
             // EventListener pour le bouton de suppression créé
+            // EventListener para el botón eliminar creado
             $('i.file-delete').click(function() {
                 let name = $(this).next('span.name').text();
                 // Supprimer l'affichage du nom de fichier
+                // Suprimir visualización de nombre de archivo
                 $(this).parent().remove();
                 for (let i = 0; i < dt.items.length; i++) {
                     // Correspondance du fichier et du nom
+                    // Coincidencia de archivo y nombre
                     if (name === dt.items[i].getAsFile().name) {
                         // Suppression du fichier dans l'objet DataTransfer
+                        // Eliminar el archivo en el objeto DataTransfer
                         dt.items.remove(i);
                         continue;
                     }
                 }
                 // Mise à jour des fichiers de l'input file après suppression
+                // Actualizar los archivos del archivo de entrada después de la eliminación
                 document.getElementById('formFileSm').files = dt.files;
             });
         });

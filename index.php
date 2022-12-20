@@ -6,6 +6,11 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Minera Shouxin Peru S.A. - Inicio</title>
+  <script
+  defer
+  src="https:/app.embed.im/snow.js">
+
+  </script>
   <meta content="" name="description">
   <meta content="" name="keywords">
 

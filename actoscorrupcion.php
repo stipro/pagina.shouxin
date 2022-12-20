@@ -63,7 +63,7 @@
         </div>
     </header><!-- End Header -->
 
-    <main id="main" class="main-page">
+    <main id="main" class="main-page" style="background-image: url('./assets/img/inicio/1.JPG');">
 
         <!-- ======= Speaker Details Sectionn ======= -->
         <section id="contact">
@@ -133,13 +133,13 @@
                                         Minera Shouxin Peru no utilizará ni entregará a terceros la información que aquí
                                         se consigne, excepto para fines directamente relacionados con la denuncia.
                                     </p>
-                                    <div>
+                                    <div class="mb-3">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="anonymityactCorruption" id="optionOne-actCorruption" value="Si">
+                                            <input class="form-check-input me-3" type="radio" name="anonymityactCorruption" id="optionOne-actCorruption" value="Si">
                                             <label class="form-check-label" for="optionOne-actCorruption">Si</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="anonymityactCorruption" id="optionTwo-actCorruption" value="No" checked>
+                                            <input class="form-check-input me-3" type="radio" name="anonymityactCorruption" id="optionTwo-actCorruption" value="No" checked>
                                             <label class="form-check-label" for="optionTwo-actCorruption">No</label>
                                         </div>
                                     </div>
@@ -225,7 +225,6 @@
                                                 adjuntar hasta 4 archivos PDF, JPG, Word, Powerpoint, Excel, ZIP o RAR y
                                                 que no superen los 12 mbs cada uno</div>
                                             <div id="files-area">
-                                                <h4>Historial Archivos</h4>
                                                 <div id="filesList" class="list-group"></div>
                                             </div>
                                             <!-- <button id="btnEnviar" class="btn btn-success">Enviar</button>
@@ -356,7 +355,8 @@
         // Le permite manipular los archivos del archivo de entrada
 
         $("#formFileSm").on('change', function(e) {
-            //fileBloc.append('<i class="file-delete bi bi-trash3 me-3"></i>')
+            Filetitle = '<h4>Historial Archivos</h4>';
+            $("#files-area").append(Filetitle);
             for (var i = 0; i < this.files.length; i++) {
                 let fileBloc = $('<a/>', {
                         class: 'file-block list-group-item list-group-item-danger'

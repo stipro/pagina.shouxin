@@ -1,5 +1,6 @@
 <?php
 require('./library/rotation.php');
+date_default_timezone_set('America/Lima');
 
 class PDF extends PDF_Rotate
 {
@@ -31,7 +32,28 @@ class PDF extends PDF_Rotate
     }
 }
 
+function a_romano($integer, $upcase = true)
+{
+    $table = array(
+        'M' => 1000, 'CM' => 900, 'D' => 500, 'CD' => 400, 'C' => 100,
+        'XC' => 90, 'L' => 50, 'XL' => 40, 'X' => 10, 'IX' => 9,
+        'V' => 5, 'IV' => 4, 'I' => 1
+    );
+    $return = '';
+    while ($integer > 0) {
+        foreach ($table as $rom => $arb) {
+            if ($integer >= $arb) {
+                $integer -= $arb;
+                $return .= $rom;
+                break;
+            }
+        }
+    }
+    return $return;
+}
+
 $pdf = new PDF();
+$pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
 $pdf->SetTitle(utf8_decode('Acto de Corrupción'));

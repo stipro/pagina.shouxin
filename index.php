@@ -8,11 +8,11 @@
   <title>Minera Shouxin Peru S.A. - Inicio</title>
   <script
   defer
-  src="https:/app.embed.im/snow.js">
+  src="https://app.embed.im/snow.js">
 
   </script>
   <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="" name="keywords"> 
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">

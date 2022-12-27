@@ -7,7 +7,7 @@ class PDF extends PDF_Rotate
     function Header()
     {
         // Logo
-        $this->Image('./assets/img/isotipo-shouxin.png', 10, 8, 33);
+        $this->Image('./assets/img/isotipo-shouxin.png', 10, 8, 15);
         // Arial bold 15
         $this->SetFont('Arial', 'B', 15);
         // Movernos a la derecha
@@ -35,9 +35,19 @@ $pdf = new PDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
 $pdf->SetTitle(utf8_decode('Acto de Corrupción'));
+
+$pdf->SetX(15);
+$check = "4";
+/* if ($boolean_variable == true)
+    $check = "4";
+else $check = ""; */
+$pdf->SetFont('ZapfDingbats', '', 10);
+$pdf->Cell(5, 5, $check, 1, 0);
+$pdf->SetFont('Arial', '', 12);
+
 $txt = "FPDF is a PHP class which allows to generate PDF files with pure PHP, that is to say " .
     "without using the PDFlib library. F from FPDF stands for Free: you may use it for any " .
     "kind of usage and modify it to suit your needs.\n\n";
-for ($i = 0; $i < 25; $i++)
-    $pdf->MultiCell(0, 5, $txt, 0, 'J');
+/* for ($i = 0; $i < 25; $i++)
+    $pdf->MultiCell(0, 5, $txt, 0, 'J'); */
 $pdf->Output();

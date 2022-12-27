@@ -12,7 +12,7 @@ if (!$_POST) {
 if ($_POST['acceptedTerms'] != 1) {
     $rptController["status"] = 404;
     $rptController["msg"] = 'No acepto Términos y Condiciones';
-    echo json_encode($rptController);
+    //echo json_encode($rptController);
     return;
 }
 
@@ -42,7 +42,7 @@ if ($_POST['anonymityactCorruption'] != 'Si') {
     if ($verifyForm) {
         $rptController["status"] = 404;
         $rptController["msg"] = 'Falta un dato';
-        echo json_encode($rptController);
+        //echo json_encode($rptController);
         return;
     };
 }
@@ -50,7 +50,7 @@ if ($_POST['anonymityactCorruption'] != 'Si') {
 if (!$_POST['lift']) {
     $rptController["status"] = 404;
     $rptController["msg"] = 'Falta sustento';
-    echo json_encode($rptController);
+    //echo json_encode($rptController);
     return;
 }
 
@@ -141,4 +141,4 @@ rename($name_zip, $path_actscorruption . $name_zip);
 
 $rptController["status"] = 201;
 $rptController["msg"] = 'Se registro correctamente';
-echo json_encode($rptController);
+/* echo json_encode($rptController); */

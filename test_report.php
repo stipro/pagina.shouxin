@@ -1,404 +1,157 @@
 <?php
-require('./library/fpdf/fpdf.php');
+require('./library/rotation.php');
 date_default_timezone_set('America/Lima');
-class PDF extends FPDF
+
+class PDF extends PDF_Rotate
 {
-// Cargar los datos
-function LoadData($file)
-{
-    // Leer las líneas del fichero
+
+    function Header()
+    {
+        // Logo
+        $this->Image('./assets/img/isotipo-shouxin.png', 10, 8, 15);
+        // Arial bold 15
+        $this->SetFont('Arial', 'B', 7);
+        // Movernos a la derecha
+        $this->Cell(80);
+        // Título
+        $this->Cell(30, 10, utf8_decode('ACTOS DE CORRUPCIÓN'), 0, 0, 'C');
+        // Salto de línea
+        $this->Ln(20);
+        //Put the watermark
+        $this->SetFont('Arial', 'B', 50);
+        $this->SetTextColor(255, 192, 203);
+        $this->RotatedText(80, 150, 'S h o u x i n', 45);
+    }
+
+    function RotatedText($x, $y, $txt, $angle)
+    {
+        //Text rotated around its origin
+        $this->Rotate($angle, $x, $y);
+        $this->Text($x, $y, $txt);
+        $this->Rotate(0);
+    }
 }
 
-function Header(){
-        $this->SetFont('Arial','B',15);
-        $this->setX(20);
-
-// $this->Line(20, 6, 195, 6); // 20mm from each edge
-
-//$this->Line(20, 260.5, 200, 260.5); // 20mm from each edge
-//$this->Line(20, 261.5, 200, 261.5); // 20mm from each edge
-// $this->Line(20, 262.5, 200, 262.5); // 20mm from each edge
-        $this->SetFont('Arial','B',30);
-        $this->Cell(200,10,"AutoMotriz");
-        $this->Ln();
-        $this->SetX(75);
-        $this->Cell(200,10,"Integral");
-        $this->setY(7);
-        $this->SetFont('Arial','B',10);
-        $this->setX(165-5);
-        $this->Cell(39,6,"ORDEN DE SERVICIO",1);
-        $this->setY(13);
-        $this->setX(165-5);
-        $this->Cell(39,6,"",1);
-        $this->setY(19);
-        $this->setX(160);
-        $this->Cell(13,6,"DIA",1);
-        $this->setX(160+13);
-        $this->Cell(13,6,"MES",1);
-        $this->setX(160+26);
-        $this->Cell(13,6,"A".utf8_decode("Ñ")."O",1);
-        $this->setY(25);
-        $this->setX(160);
-        $this->Cell(13,6,"",1);
-        $this->setX(160+13);
-        $this->Cell(13,6,"",1);
-        $this->setX(160+26);
-        $this->Cell(13,6,"",1);
-
-}
-// Tabla simple
-function ImprovedTable($data)
+function a_romano($integer, $upcase = true)
 {
-        $this->setY(31);
-        $this->setX(20);
-        $this->SetFont('Arial','B',8);
-        $this->setY(33);
-        $this->setX(20);
-        $this->Cell(0,10,"AV. CESAR SANDINO NO. 313 (FRENTE AL SEGURO SOCIAL) COL. 1RO. DE MAYO VILLAHERMOSA, TABASCO. TEL: 352 29 10");
-        $this->setY(40);
-        $this->setX(20);
-        $this->SetFont('Arial','B',8);
-         $this->Cell(0,35,"",1);
-        $this->setY(38);
-        $this->setX(20);
-        $this->Cell(0,10," NOMBRE ________________________________________________________________________________________________________");
-        $this->setY(43);
-        $this->setX(20);
-        $this->Cell(0,10," DIRECCION ______________________________________________________________________________________________________");
-        $this->setY(48);
-        $this->setX(20);
-        $this->Cell(0,10," CP _____________________________ TEL _______________________________________ RFC ________________________________");
-        $this->setY(53);
-        $this->setX(20);
-        $this->Cell(0,10," MODELO _______________ TIPO ______________ MARCA _________________ COLOR _____________ PLACA _________________");
-        $this->setY(58);
-        $this->setX(20);
-        $this->Cell(0,10," FECHA DE INGRESO _______________ HORA ______________ FECHA DE ENTREGA ___________________ HORA _____________ ");
-        $this->setY(63);
-        $this->setX(20);
-        $this->Cell(0,10," SERIE _____________________________________________________ KM. RECORRIDOS ____________________________________ ");
-
-        $this->setY(80);
-        $this->setX(20);
-        $this->Cell(0,10," INVENTARIO DEL VEHICULO ");
-        $this->setY(85);
-        $this->setX(20);
-        $this->Cell(0,10," *** EXTERIORES *** ");
-
-        $this->setY(90);
-        $this->setX(20);
-        $this->Cell(0,10," DATO                 SI / NO ");
-        $starty=0;
-        $this->setY(95+$starty);
-        $this->setX(20);
-        $this->Cell(0,10," UNIDAD DE LUCES");
-        $this->setY(95+$starty);
-        $this->setX(60);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(20);
-        $this->Cell(0,10," 1/4 DE LUCES");
-        $this->setY(95+$starty);
-        $this->setX(60);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(20);
-        $this->Cell(0,10," ANTENA");
-        $this->setY(95+$starty);
-        $this->setX(60);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(20);
-        $this->Cell(0,10," ESPEJO LATERAL");
-        $this->setY(95+$starty);
-        $this->setX(60);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(20);
-        $this->Cell(0,10," CRISTALES");
-        $this->setY(95+$starty);
-        $this->setX(60);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(20);
-        $this->Cell(0,10," BLEMA");
-        $this->setY(95+$starty);
-        $this->setX(60);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(20);
-        $this->Cell(0,10," LLANTAS(4)");
-        $this->setY(95+$starty);
-        $this->setX(60);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(20);
-        $this->Cell(0,10," TAPON DE RUEDAS(4)");
-        $this->setY(95+$starty);
-        $this->setX(60);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(20);
-        $this->Cell(0,10," MULDURAS COMPLETAS");
-        $this->setY(95+$starty);
-        $this->setX(60);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(20);
-        $this->Cell(0,10," TAPON DE GASOLINA");
-        $this->setY(95+$starty);
-        $this->setX(60);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(20);
-        $this->Cell(0,10," CARROCERIA SIN GOLPES");
-        $this->setY(95+$starty);
-        $this->setX(60);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(20);
-        $this->Cell(0,10," BOCINAS DE CLAXON");
-        $this->setY(95+$starty);
-        $this->setX(60);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-///////////////////////////////////////////////////////////////
-        $this->setY(85);
-        $this->setX(150);
-        $this->Cell(0,10," *** INTERIORES *** ");
-        $this->setY(90);
-        $this->setX(150);
-        $this->Cell(0,10," DATO                 SI / NO ");
-        $starty=0;
-        $this->setY(95+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," INSTR. DE TABLERO");
-        $this->setY(95+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," CALEFACCION");
-        $this->setY(95+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," LIMPIADORES (PLUMAS)");
-        $this->setY(95+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," RADIO/TIPO ___________");
-        $this->setY(95+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," BOCINAS ___________");
-        $this->setY(95+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," ENCENDEDOR");
-        $this->setY(95+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," ESPEJO RETROVISOR");
-        $this->setY(95+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," CENICEROS");
-        $this->setY(95+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," CINTURONES");
-        $this->setY(95+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," BOTONES DE INTERIORES");
-        $this->setY(95+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," MANIJA DE INTERIORES");
-        $this->setY(95+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," TAPETES");
-        $this->setY(95+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(95+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," VESTIDURAS");
-        $this->setY(95+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        ///////////////////////////////////
-        $this->setY(165);
-        $this->setX(20);
-        $this->Cell(0,10," OBSERVACIONES ________________________________________________________________________________________________ ");
-        ///////////////////////////
-        $this->setY(180);
-        $this->setX(90);
-        $this->Cell(0,10," *** ACCESORIOS *** ");
-        $this->setY(90);
-        $this->setX(90);
-        $this->Cell(0,10," DATO                 SI / NO ");
-        $starty=0;
-        $this->setY(190+$starty);
-        $this->setX(90);
-        $this->Cell(0,10," GATO");
-        $this->setY(190+$starty);
-        $this->setX(130);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(190+$starty);
-        $this->setX(90);
-        $this->Cell(0,10," MANERAL DE GATO");
-        $this->setY(190+$starty);
-        $this->setX(130);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;        
-        $this->setY(190+$starty);
-        $this->setX(90);
-        $this->Cell(0,10," LLAVE DE RUEDAS");
-        $this->setY(190+$starty);
-        $this->setX(130);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;        
-        $this->setY(190+$starty);
-        $this->setX(90);
-        $this->Cell(0,10," ESTUCHE DE HTAS.");
-        $this->setY(190+$starty);
-        $this->setX(130);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;        $this->setY(190+$starty);
-        $this->setX(90);
-        $this->Cell(0,10," TRGLO. DE SEGURIDAD");
-        $this->setY(190+$starty);
-        $this->setX(130);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(190+$starty);
-        $this->setX(90);
-        $this->Cell(0,10," LLANTA DE REFACCION");
-        $this->setY(190+$starty);
-        $this->setX(130);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(190+$starty);
-        $this->setX(90);
-        $this->Cell(0,10," EXTINGUIDOR");
-        $this->setY(190+$starty);
-        $this->setX(130);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        ////////////////////////////////////////////////////
-        $this->setY(180);
-        $this->setX(145);
-        $this->Cell(0,10," *** COMPONENTES MECANICOS *** ");
-        $this->setY(140);
-        $this->setX(150);
-        $starty=0;
-        $this->setY(190+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," GATO");
-        $this->setY(190+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(190+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," MANERAL DE GATO");
-        $this->setY(190+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;        
-        $this->setY(190+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," LLAVE DE RUEDAS");
-        $this->setY(190+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;        
-        $this->setY(190+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," ESTUCHE DE HTAS.");
-        $this->setY(190+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;        $this->setY(190+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," TRGLO. DE SEGURIDAD");
-        $this->setY(190+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(190+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," LLANTA DE REFACCION");
-        $this->setY(190+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        $this->setY(190+$starty);
-        $this->setX(150);
-        $this->Cell(0,10," EXTINGUIDOR");
-        $this->setY(190+$starty);
-        $this->setX(190);
-        $this->Cell(0,10,"|__|__| ");
-        $starty+=5;
-        ////////////////////////////////////////////////////
-}
-
-// Tabla coloreada
+    $table = array(
+        'M' => 1000, 'CM' => 900, 'D' => 500, 'CD' => 400, 'C' => 100,
+        'XC' => 90, 'L' => 50, 'XL' => 40, 'X' => 10, 'IX' => 9,
+        'V' => 5, 'IV' => 4, 'I' => 1
+    );
+    $return = '';
+    while ($integer > 0) {
+        foreach ($table as $rom => $arb) {
+            if ($integer >= $arb) {
+                $integer -= $arb;
+                $return .= $rom;
+                break;
+            }
+        }
+    }
+    return $return;
 }
 
 $pdf = new PDF();
+$pdf->AliasNbPages();
 $pdf->AddPage();
-// $pdf->Header();
-$pdf->ImprovedTable("hola");
+$pdf->SetFont('Arial', '', 7);
+$pdf->SetTitle(utf8_decode('Acto de Corrupción'));
 
-//echo $name;
+// Agregar una etiqueta y un campo de texto para el nombre
+$pdf->SetFont('Arial', 'B', 6);
+$pdf->Cell(190, 5, '1 REGISTRO DE LA DENUNCIA:', 1, 0);
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(25, 5, utf8_decode('Fecha'), 1, 0, 'L');
+$pdf->SetY(35.5);
+$pdf->SetX(35);
+$pdf->Cell(10, 4, '29', 1, 0, 'C');
+$pdf->Cell(10, 4, '12', 1, 0, 'C');
+$pdf->Cell(10, 4, '2022', 1, 0, 'C');
+
+$pdf->Ln();
+$pdf->SetY(35);
+$pdf->SetX(150);
+$pdf->Cell(25, 5, utf8_decode('N° de Registro'), 1, 0, 'L');
+$pdf->Cell(25, 5, utf8_decode(''), 1, 0, 'L');
+
+$pdf->SetY(35);
+$pdf->SetX(10);
+$pdf->Ln();
+$pdf->Cell(25, 5, utf8_decode('¿Denuncia anónima?'), 1, 0, 'L');
+$pdf->Ln();
+$pdf->SetY(40);
+$pdf->SetX(35);
+
+$check = "3";
+/* if ($boolean_variable == true)
+    $check = "4";
+else $check = ""; */
+$pdf->Cell(15, 5, 'Si', 1, 0);
+$pdf->SetFont('ZapfDingbats', '', 6);
+$pdf->Cell(5, 5, $check, 1, 0);
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(15, 5, 'No', 1, 0);
+$pdf->Cell(5, 5, '', 1, 0);
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(100, 5, utf8_decode('* En caso de denuncias anónimas no dan lugar al otorgamiento de medidas de protección'), 1, 0, 'L', 0, '', 0);
+$pdf->Ln();
+$pdf->SetFillColor(191, 191, 191);
+$pdf->SetFont('Arial', 'B', 6);
+$pdf->Cell(190, 5, utf8_decode('DENTIFICACIÓN DEL DENUNCIANTE'), 1, 0, 'L', 1, '', 0);
+// Tipo de documento
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(25, 5, utf8_decode('Tipo de documento'), 1, 0, 'L');
+$pdf->Cell(15, 5, 'DNI', 1, 0);
+$pdf->SetFont('ZapfDingbats', '', 6);
+$pdf->Cell(5, 5, '4', 1, 0);
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(15, 5, 'CE', 1, 0);
+$pdf->SetFont('ZapfDingbats', '', 6);
+$pdf->Cell(5, 5, '', 1, 0);
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(15, 5, 'RUC', 1, 0);
+$pdf->SetFont('ZapfDingbats', '', 6);
+$pdf->Cell(5, 5, '', 1, 0);
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(15, 5, 'OTROS', 1, 0);
+$pdf->SetFont('ZapfDingbats', '', 6);
+$pdf->Cell(5, 5, '', 1, 0);
+
+// Numero de documento
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(18, 5, utf8_decode('N° Documento'), 1, 0, 'C');
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(18, 5, utf8_decode('75898835'), 1, 0, 'L');
+// Nombres y Apellidos
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(25, 5, utf8_decode('Nombres y apellidos'), 1, 0);
+$pdf->Cell(165, 5, utf8_decode(''), 1, 0);
+// Correo
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(25, 5, utf8_decode('Correo'), 1, 0);
+$pdf->Cell(70, 5, utf8_decode(''), 1, 0);
+// Telefono
+$pdf->Cell(25, 5, utf8_decode('Teléfono'), 1, 0);
+$pdf->Cell(70, 5, utf8_decode(''), 1, 0);
+// Domicilio
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(25, 5, utf8_decode('Domicilio'), 1, 0);
+$pdf->Cell(70, 5, utf8_decode(''), 1, 0);
+// Tipo de denuncia
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(190, 5, utf8_decode('Tipo de Denuncia'), 1, 0);
+$pdf->Ln();
+$pdf->Cell(190, 20, utf8_decode(''), 1, 0);
+
+$pdf->Ln();
+$pdf->Cell(190, 5, utf8_decode('Sustento del hecho'), 1, 0);
+$pdf->Ln();
+$pdf->Cell(190, 20, utf8_decode(''), 1, 0);
 $pdf->Output();
-//print "<script>window.location=\"".$name."\";</script>";
-?>

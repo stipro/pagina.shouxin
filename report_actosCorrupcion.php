@@ -10,11 +10,11 @@ class PDF extends PDF_Rotate
         // Logo
         $this->Image('./assets/img/isotipo-shouxin.png', 10, 8, 15);
         // Arial bold 15
-        $this->SetFont('Arial', 'B', 15);
+        $this->SetFont('Arial', 'B', 7);
         // Movernos a la derecha
         $this->Cell(80);
         // Título
-        $this->Cell(30, 10, utf8_decode('Actos de Corrupción'), 0, 0, 'C');
+        $this->Cell(30, 10, utf8_decode('ACTOS DE CORRUPCIÓN'), 0, 0, 'C');
         // Salto de línea
         $this->Ln(20);
         //Put the watermark
@@ -55,21 +55,103 @@ function a_romano($integer, $upcase = true)
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->SetFont('Arial', '', 12);
+$pdf->SetFont('Arial', '', 7);
 $pdf->SetTitle(utf8_decode('Acto de Corrupción'));
 
-$pdf->SetX(15);
-$check = "4";
+// Agregar una etiqueta y un campo de texto para el nombre
+$pdf->SetFont('Arial', 'B', 6);
+$pdf->Cell(190, 5, '1 REGISTRO DE LA DENUNCIA:', 1, 0);
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(25, 5, utf8_decode('Fecha'), 1, 0, 'L');
+$pdf->SetY(35.5);
+$pdf->SetX(35);
+$pdf->Cell(10, 4, '29', 1, 0, 'C');
+$pdf->Cell(10, 4, '12', 1, 0, 'C');
+$pdf->Cell(10, 4, '2022', 1, 0, 'C');
+
+$pdf->Ln();
+$pdf->SetY(35);
+$pdf->SetX(150);
+$pdf->Cell(25, 5, utf8_decode('N° de Registro'), 1, 0, 'L');
+$pdf->Cell(25, 5, utf8_decode(''), 1, 0, 'L');
+
+$pdf->SetY(35);
+$pdf->SetX(10);
+$pdf->Ln();
+$pdf->Cell(25, 5, utf8_decode('¿Denuncia anónima?'), 1, 0, 'L');
+$pdf->Ln();
+$pdf->SetY(40);
+$pdf->SetX(35);
+
+$check = "3";
 /* if ($boolean_variable == true)
     $check = "4";
 else $check = ""; */
-$pdf->SetFont('ZapfDingbats', '', 10);
+$pdf->Cell(15, 5, 'Si', 1, 0);
+$pdf->SetFont('ZapfDingbats', '', 6);
 $pdf->Cell(5, 5, $check, 1, 0);
-$pdf->SetFont('Arial', '', 12);
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(15, 5, 'No', 1, 0);
+$pdf->Cell(5, 5, '', 1, 0);
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(100, 5, utf8_decode('* En caso de denuncias anónimas no dan lugar al otorgamiento de medidas de protección'), 1, 0, 'L', 0, '', 0);
+$pdf->Ln();
+$pdf->SetFillColor(191, 191, 191);
+$pdf->SetFont('Arial', 'B', 6);
+$pdf->Cell(190, 5, utf8_decode('DENTIFICACIÓN DEL DENUNCIANTE'), 1, 0, 'L', 1, '', 0);
+// Tipo de documento
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(25, 5, utf8_decode('Tipo de documento'), 1, 0, 'L');
+$pdf->Cell(15, 5, 'DNI', 1, 0);
+$pdf->SetFont('ZapfDingbats', '', 6);
+$pdf->Cell(5, 5, '4', 1, 0);
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(15, 5, 'CE', 1, 0);
+$pdf->SetFont('ZapfDingbats', '', 6);
+$pdf->Cell(5, 5, '', 1, 0);
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(15, 5, 'RUC', 1, 0);
+$pdf->SetFont('ZapfDingbats', '', 6);
+$pdf->Cell(5, 5, '', 1, 0);
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(15, 5, 'OTROS', 1, 0);
+$pdf->SetFont('ZapfDingbats', '', 6);
+$pdf->Cell(5, 5, '', 1, 0);
 
-$txt = "FPDF is a PHP class which allows to generate PDF files with pure PHP, that is to say " .
-    "without using the PDFlib library. F from FPDF stands for Free: you may use it for any " .
-    "kind of usage and modify it to suit your needs.\n\n";
-/* for ($i = 0; $i < 25; $i++)
-    $pdf->MultiCell(0, 5, $txt, 0, 'J'); */
+// Numero de documento
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(18, 5, utf8_decode('N° Documento'), 1, 0, 'C');
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(18, 5, utf8_decode('75898835'), 1, 0, 'L');
+// Nombres y Apellidos
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(25, 5, utf8_decode('Nombres y apellidos'), 1, 0);
+$pdf->Cell(165, 5, utf8_decode(''), 1, 0);
+// Correo
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(25, 5, utf8_decode('Correo'), 1, 0);
+$pdf->Cell(70, 5, utf8_decode(''), 1, 0);
+// Telefono
+$pdf->Cell(25, 5, utf8_decode('Teléfono'), 1, 0);
+$pdf->Cell(70, 5, utf8_decode(''), 1, 0);
+// Domicilio
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(25, 5, utf8_decode('Domicilio'), 1, 0);
+$pdf->Cell(70, 5, utf8_decode(''), 1, 0);
+// Tipo de denuncia
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 6);
+$pdf->Cell(190, 5, utf8_decode('Tipo de Denuncia'), 1, 0);
+$pdf->Ln();
+$pdf->Cell(190, 20, utf8_decode(''), 1, 0);
+
+$pdf->Ln();
+$pdf->Cell(190, 5, utf8_decode('Sustento del hecho'), 1, 0);
+$pdf->Ln();
+$pdf->Cell(190, 20, utf8_decode(''), 1, 0);
 $pdf->Output();

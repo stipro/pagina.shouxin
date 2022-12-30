@@ -170,15 +170,15 @@ $mail->Port = 587;
 
 // Configura los encabezados del correo electrónico
 $mail->setFrom('webmaster@example.com', 'Intranet');
-$mail->addAddress('stipro150197@gmail.com', 'destinatario');
+$mail->addAddress('cgarcia@shouxin.com.pe', 'destinatario');
 $mail->Subject = utf8_decode('Actos de Corrupción');
 
 // Configura el cuerpo del mensaje
 $mail->Body = 'Se genero solicito, se envia detalles.';
 
 // Adjuntamos el archivo
-$mail->addAttachment($name_zip, 'Archivos Adjuntados');
-$mail->addAttachment('case' . $val_lastRow . '.pdf', 'Formulario');
+$mail->addAttachment($name_zip, $name_zip);
+$mail->addAttachment('case' . $val_lastRow . '.pdf', 'case' . $val_lastRow . '.pdf');
 
 // Envía el correo electrónico
 if (!$mail->send()) {

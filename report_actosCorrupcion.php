@@ -186,4 +186,4 @@ $pdf->Ln();
 $pdf->Cell(190, 5, utf8_decode('Sustento del hecho'), 1, 0);
 $pdf->Ln();
 $pdf->Cell(190, 20, utf8_decode($val_lift), 1, 0);
-$pdf->Output('case.pdf', 'F');
+$pdf->Output('case' . $val_lastRow . '.pdf', 'F');

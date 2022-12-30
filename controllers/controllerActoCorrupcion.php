@@ -67,7 +67,7 @@ $val_email = $_POST['email'] ? $_POST['email'] : '';
 $val_typeofcomplaint = $_POST['typeofcomplaint'] ? $_POST['typeofcomplaint'] : '';
 $val_lift = $_POST['lift'] ? $_POST['lift'] : '';
 
-/* require_once '../models/actosCorrupcion.php';
+require_once '../models/actosCorrupcion.php';
 $actoCorrupcion = new actosCorrupcion();
 
 $valArchive = (!$_FILES["file"]["name"][0]) ? 0 : 1;
@@ -142,12 +142,12 @@ foreach ($listArchiveNew as $nuevo) {
     $mizip->addFile($parth_new, str_replace('./../sistema/assets/uploads/actoCorrupcion/', '', $parth_new));
 }
 
-$mizip->close(); */
+$mizip->close();
 
 // Generamos Archivo PDF
 require('../report_actosCorrupcion.php');
 
-/* use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require './../vendor/phpmailer/phpmailer/src/Exception.php';
@@ -185,7 +185,7 @@ if (!$mail->send()) {
     $rptController["msgPHPMailer"] = 'El mensaje no se pudo enviar. Error de PHPMailer:' . $mail->ErrorInfo;
 } else {
     $rptController["msgPHPMailer"] = 'Email enviado correctamente.';
-} */
+}
 
 
 /* // Generar la descarga en el navegador

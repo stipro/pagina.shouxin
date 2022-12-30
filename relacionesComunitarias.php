@@ -81,13 +81,13 @@
                 </div>
 
                 <div class="row mb-5">
-                    <form id="formCreate-actCorruption" class="php-email-form">
+                    <form id="formCreate-relacionesComunitarias" class="php-email-form">
                         <div class="mb-3 row">
                             <div class="col-12 col-sm-6 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Nombre<span class="text-danger">*</span></label>
+                                    <label for="namesSurnames-communityRelations" class="control-label form-control-sm form-label">Nombre<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Nombre" value="">
+                                        <input type="text" name="namesSurnames" id="namesSurnames-communityRelations" class="form-control form-control-sm" placeholder="Nombre" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -95,9 +95,9 @@
                             </div>
                             <div class="col-12 col-sm-6 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Dirección<span class="text-danger">*</span></label>
+                                    <label for="direction-communityRelations" class="control-label form-control-sm form-label">Dirección<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Dirección" value="">
+                                        <input type="text" name="direction" id="direction-communityRelations" class="form-control form-control-sm" placeholder="Dirección" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -105,9 +105,9 @@
                             </div>
                             <div class="col-12 col-sm-6 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Correo electrónico<span class="text-danger">*</span></label>
+                                    <label for="mail-communityRelations" class="control-label form-control-sm form-label">Correo electrónico<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Correo electrónico" value="">
+                                        <input type="text" name="mail" id="mail-communityRelations" class="form-control form-control-sm" placeholder="Correo electrónico" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -115,9 +115,9 @@
                             </div>
                             <div class="col-12 col-sm-6 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Celular<span class="text-danger">*</span></label>
+                                    <label for="mobile-communityRelations" class="control-label form-control-sm form-label">Celular<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Celular" value="">
+                                        <input type="text" name="mobile" id="mobile-communityRelations" class="form-control form-control-sm" placeholder="Celular" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -125,9 +125,9 @@
                             </div>
                             <div class="col-12 col-sm-6 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Organización que representa<span class="text-danger">*</span></label>
+                                    <label for="organization-communityRelations" class="control-label form-control-sm form-label">Organización que representa<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Organización que representa" value="">
+                                        <input type="text" name="organization" id="organization-communityRelations" class="form-control form-control-sm" placeholder="Organización que representa" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -135,9 +135,9 @@
                             </div>
                             <div class="col-12 col-sm-6 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Acompañantes<span class="text-danger">*</span></label>
+                                    <label for="escort-communityRelations" class="control-label form-control-sm form-label">Acompañantes<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Acompañantes" value="">
+                                        <input type="text" name="escort" id="escort-communityRelations" class="form-control form-control-sm" placeholder="Acompañantes" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -147,9 +147,9 @@
                         <div class="mb-3 row">
                             <div class="col-12 col-sm-6 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Frases Mencionadas<span class="text-danger">*</span></label>
+                                    <label for="phrasesMentioned-communityRelations" class="control-label form-control-sm form-label">Frases Mencionadas<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Frases Mencionadas" value="">
+                                        <input type="text" name="phrasesMentioned" id="phrasesMentioned-communityRelations" class="form-control form-control-sm" placeholder="Frases Mencionadas" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -157,9 +157,9 @@
                             </div>
                             <div class="col-12 col-sm-6 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Personas Referidas<span class="text-danger">*</span></label>
+                                    <label for="referredPeople-communityRelations" class="control-label form-control-sm form-label">Personas Referidas<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Personas Referidas" value="">
+                                        <input type="text" name="referredPeople" id="referredPeople-communityRelations" class="form-control form-control-sm" placeholder="Personas Referidas" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -167,9 +167,9 @@
                             </div>
                             <div class="col-12 col-sm-6 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Sucesos en el Tiempo<span class="text-danger">*</span></label>
+                                    <label for="eventsInTime-communityRelations" class="control-label form-control-sm form-label">Sucesos en el Tiempo<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Sucesos en el Tiempo" value="">
+                                        <input type="text" name="eventsInTime" id="eventsInTime-communityRelations" class="form-control form-control-sm" placeholder="Sucesos en el Tiempo" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -177,9 +177,9 @@
                             </div>
                             <div class="col-12 col-sm-6 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Documentación Anexada<span class="text-danger">*</span></label>
+                                    <label for="namesSurnames-communityRelations" class="control-label form-control-sm form-label">Documentación Anexada<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="name-collaborator" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Documentación Anexada" value="">
+                                        <input type="text" name="name-collaborator" id="namesSurnames-communityRelations" class="form-control form-control-sm" placeholder="Documentación Anexada" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -293,7 +293,7 @@
     <!-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
     <!-- waitme js -->
     <script src="assets/waitme/waitMe.min.js"></script>
@@ -306,6 +306,13 @@
 
     <!-- Base JS File -->
     <script src="assets/js/base.js"></script>
+
+    <!-- Relacion Comunitarias JS File -->
+    <script src="assets/js/relacionesComunitaria.js"></script>
+
+    <script>
+
+    </script>
 
 </body>
 

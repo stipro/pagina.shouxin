@@ -57,9 +57,6 @@ if (!$_POST['lift']) {
     return;
 }
 
-require_once '../models/actosCorrupcion.php';
-$actoCorrupcion = new actosCorrupcion();
-
 $val_acceptedTerms = $_POST['acceptedTerms'] ? $_POST['acceptedTerms'] : '';
 $val_anonymityactCorruption = $_POST['anonymityactCorruption'] ? $_POST['anonymityactCorruption'] : '';
 $val_namesSurnames = $_POST['namesSurnames'] ? $_POST['namesSurnames'] : '';
@@ -69,6 +66,9 @@ $val_address = $_POST['address'] ? $_POST['address'] : '';
 $val_email = $_POST['email'] ? $_POST['email'] : '';
 $val_typeofcomplaint = $_POST['typeofcomplaint'] ? $_POST['typeofcomplaint'] : '';
 $val_lift = $_POST['lift'] ? $_POST['lift'] : '';
+
+/* require_once '../models/actosCorrupcion.php';
+$actoCorrupcion = new actosCorrupcion();
 
 $valArchive = (!$_FILES["file"]["name"][0]) ? 0 : 1;
 
@@ -114,9 +114,9 @@ for ($i = 0; $i < $conteo; $i++) {
     // Almacena lista de archivos renombrados
     $listArchiveNew[] = $nuevoNombre;
     // Mover del temporal al directorio actual
-    /* if (!move_uploaded_file($ubicacionTemporal, $path_actscorruption . $nuevoNombre)) {
-        return;
-    } */
+    //if (!move_uploaded_file($ubicacionTemporal, $path_actscorruption . $nuevoNombre)) {
+        //return;
+    //}
 
     // Intentamos mover el archivo a la ruta de destino
     if (move_uploaded_file($ubicacionTemporal, $path_actscorruption . $nuevoNombre)) {
@@ -142,9 +142,12 @@ foreach ($listArchiveNew as $nuevo) {
     $mizip->addFile($parth_new, str_replace('./../sistema/assets/uploads/actoCorrupcion/', '', $parth_new));
 }
 
-$mizip->close();
+$mizip->close(); */
 
-use PHPMailer\PHPMailer\PHPMailer;
+// Generamos Archivo PDF
+require('../report_actosCorrupcion.php');
+
+/* use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require './../vendor/phpmailer/phpmailer/src/Exception.php';
@@ -175,13 +178,14 @@ $mail->Body = 'Se genero solicito, se envia detalles.';
 
 // Adjuntamos el archivo
 $mail->addAttachment($name_zip, 'Archivos Adjuntados');
+$mail->addAttachment('case' . $val_lastRow . '.pdf', 'Formulario');
 
 // Envía el correo electrónico
 if (!$mail->send()) {
     $rptController["msgPHPMailer"] = 'El mensaje no se pudo enviar. Error de PHPMailer:' . $mail->ErrorInfo;
 } else {
     $rptController["msgPHPMailer"] = 'Email enviado correctamente.';
-}
+} */
 
 
 /* // Generar la descarga en el navegador

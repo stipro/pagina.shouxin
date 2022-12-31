@@ -20,7 +20,7 @@ $(document).ready(function () {
         // Enviar la solicitud Ajax
         $.ajax({
             type: 'POST',
-            url: 'controllers/controllerActoCorrupcion.php',
+            url: 'controllers/controllerRelacionesComunitarias.php',
             dataType: 'json',
             contentType: false,
             processData: false,

@@ -214,10 +214,7 @@
                                     <div class="col-12 col-sm-12 mb-3">
                                         <div class="form-group">
                                             <h5>Medio probatoria (Adjuntar)</h5>
-
-
-                                            <label for="" class="control-label form-control-sm form-label">Medio
-                                                probatoria (Adjuntar)<span class="text-danger">*</span></label>
+                                            <label for="" class="control-label form-control-sm form-label">Medio probatoria (Adjuntar)<span class="text-danger">*</span></label>
                                             <div class="input-group input-group-sm">
                                                 <input class="form-control form-control-sm" name="file[]" id="formFileSm" type="file" multiple>
                                             </div>
@@ -350,7 +347,7 @@
     <script src="assets/js/actoCorrupcion.js"></script>
 
     <script>
-        const dt = new DataTransfer(); 
+        const dt = new DataTransfer();
         // Permet de manipuler les fichiers de l'input file
         // Le permite manipular los archivos del archivo de entrada
 

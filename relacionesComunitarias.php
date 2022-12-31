@@ -177,12 +177,16 @@
                             </div>
                             <div class="col-12 col-sm-6 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-communityRelations" class="control-label form-control-sm form-label">Documentación Anexada<span class="text-danger">*</span></label>
+                                    <label for="" class="control-label form-control-sm form-label">Medio probatoria (Adjuntar)<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="name-collaborator" id="namesSurnames-communityRelations" class="form-control form-control-sm" placeholder="Documentación Anexada" value="">
-                                        <div>
-                                        </div>
+                                        <input class="form-control form-control-sm" name="file[]" id="formFileSm" type="file" accept=".jpg, .png, .pdf" multiple>
                                     </div>
+                                </div>
+                                <div id="documentIdentity-collaborator-Help" class="form-text">Usted puede
+                                    adjuntar hasta 4 archivos PDF, JPG, Word, Powerpoint, Excel, ZIP o RAR y
+                                    que no superen los 12 mbs cada uno</div>
+                                <div id="files-area">
+                                    <div id="filesList" class="list-group"></div>
                                 </div>
                             </div>
                         </div>
@@ -311,7 +315,56 @@
     <script src="assets/js/relacionesComunitaria.js"></script>
 
     <script>
+        const dt = new DataTransfer();
+        // Permet de manipuler les fichiers de l'input file
+        // Le permite manipular los archivos del archivo de entrada
 
+        $("#formFileSm").on('change', function(e) {
+            Filetitle = '<h4>Historial Archivos</h4>';
+            $("#files-area").append(Filetitle);
+            for (var i = 0; i < this.files.length; i++) {
+                let fileBloc = $('<a/>', {
+                        class: 'file-block list-group-item list-group-item-danger'
+                    }),
+                    fileName = $('<span/>', {
+                        class: 'name',
+                        text: this.files.item(i).name
+                    });
+                fileBloc.append('<i class="file-delete bi bi-trash3 me-3"></i>')
+                    .append(fileName);
+                $("#filesList").append(fileBloc);
+            };
+            // Ajout des fichiers dans l'objet DataTransfer
+            // Agregar archivos al objeto DataTransfer
+            for (let file of this.files) {
+                dt.items.add(file);
+            }
+            // Mise à jour des fichiers de l'input file après ajout
+            // Actualización de los archivos del archivo de entrada después de la adición
+            this.files = dt.files;
+
+            // EventListener pour le bouton de suppression créé
+            // EventListener para el botón eliminar creado
+            $('i.file-delete').click(function() {
+                let name = $(this).next('span.name').text();
+                // Supprimer l'affichage du nom de fichier
+                // Suprimir visualización de nombre de archivo
+                $(this).parent().remove();
+                for (let i = 0; i < dt.items.length; i++) {
+                    // Correspondance du fichier et du nom
+                    // Coincidencia de archivo y nombre
+                    if (name === dt.items[i].getAsFile().name) {
+                        // Suppression du fichier dans l'objet DataTransfer
+                        // Eliminar el archivo en el objeto DataTransfer
+                        dt.items.remove(i);
+                        continue;
+                    }
+                }
+                // Mise à jour des fichiers de l'input file après suppression
+                // Actualizar los archivos del archivo de entrada después de la eliminación
+                document.getElementById('formFileSm').files = dt.files;
+            });
+        });
     </script>
 
 </body>

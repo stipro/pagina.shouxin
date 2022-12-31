@@ -17,33 +17,81 @@ if (!isset($_POST['namesSurnames']) || empty($_POST['namesSurnames'])) {
 
 // Verficar envio POST
 if (!$_POST) {
-    $rptController["msg"] = 'No es por POST';
+    $rptController["msg"] = 'No es por POST.';
     echo json_encode($rptController);
     return;
 }
 
 if (!isset($_FILES['file']['name'][0]) || empty($_FILES['file']['name'][0])) {
     // El archivo fue subido a través de una solicitud POST
-    // Procesa el archivo, por ejemplo, mueve el archivo a otra carpeta o almacena los datos en una base de datos
-    $rptController["msgFile"] = 'No se adjunto archivo';
+    $rptController["msgFile"] = 'No se adjunto archivo.';
     echo json_encode($rptController);
-    return;
 }
 
-foreach ($_FILES['file']['name'] as $key => $fileName) {
-    $uploadedFile = $_FILES['file']['tmp_name'][$key];
-    $uploadDestination = './controllers/' . $fileName;
-    $extension = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
+require_once '../models/relacionesComunitarias.php';
+$relacionesComunitarias = new relacionesComunitarias();
 
-    if (move_uploaded_file($uploadedFile, $uploadDestination)) {
-        // El archivo se ha subido correctamente
-        // Procesa el archivo, por ejemplo, almacenándolo en una base de datos
-    } else {
-        // Ha ocurrido un error al subir el archivo
-        // Muestra un mensaje de error o redirige a otra página
+// Obtener ultimo registro
+$lastRow = $relacionesComunitarias->getLast_row();
+$val_lastRow = $lastRow[0]['lastRow'];
+
+// Verifico si es null y corrigo correlativo
+$val_lastRow = is_null($lastRow[0]['lastRow']) ? 1 : $lastRow[0]['lastRow'] + 1;
+
+$fileName = 'case' . $val_lastRow;
+
+$uploadDestination = './' . $fileName . '/';
+
+// Comprobamos si existe carpeta si no existe lo creamos
+if (!file_exists($uploadDestination)) {
+    $rptController["msg2"] = 'No existe carpeta, se va crear carpeta.';
+    mkdir($uploadDestination, 0777, true);
+}
+
+// Recorremos la lisa de archivos adjuntados
+foreach ($_FILES['file']['name'] as $key => $fileName) {
+    $uploadedFile = $_FILES["file"]["tmp_name"][$key];
+    $fileName = $_FILES["file"]["name"][$key];
+    $extension = pathinfo($fileName, PATHINFO_EXTENSION);
+
+    // Renombrar archivo
+    $newName = sprintf("%s.%s", uniqid(), $extension);
+
+    // El archivo se ha subido correctamente
+    if (move_uploaded_file($uploadedFile, $uploadDestination . $newName)) {
+        $rptController["msgUpload"] = 'El archivo se ha subido correctamente.';
+    }
+    // Ha ocurrido un error al subir el archivo
+    else {
+        $rptController["msgUpload"] = 'Ha ocurrido un error al subir el archivo.';
     }
 }
-var_dump($_FILES['file']['name']);
+
+if (extension_loaded('zip')) {
+    $rptController["msgZip"] = 'El módulo zip está habilitado.';
+    // El módulo zip está habilitado
+} else {
+    $rptController["msgZip"] = 'El módulo zip no está habilitado.';
+    // El módulo zip no está habilitado
+}
+
+// Nueva instancia de la clase "ZipArchive":
+$zip = new ZipArchive();
+
+// Abre un archivo ZIP para escribir en él utilizando el método "open"
+$zip->open('carpeta.zip', ZipArchive::CREATE);
+
+// Recorre la carpeta y sus contenidos utilizando la función "recursiveDirectoryIterator" 
+// y agrega cada archivo al archivo ZIP utilizando el método "addFile"
+$iterator = new RecursiveDirectoryIterator($uploadDestination);
+
+foreach (new RecursiveIteratorIterator($iterator) as $file) {
+    if ($file->isFile()) {
+        $zip->addFile($file->getPathname());
+    }
+}
+
+rmdir($uploadDestination);
 
 // Verificar Nombre
 if (!$_POST['namesSurnames']) {

@@ -21,7 +21,7 @@ class relacionesComunitarias extends Conexion
     ) {
 
         try {
-            $query  = "INSERT INTO relaciones_comunitaria (
+            $query  = "INSERT INTO relaciones_comunitarias (
                 relacionesComunitarias_nombre,
                 relacionesComunitarias_direccion,
                 relacionesComunitarias_correo,
@@ -70,7 +70,7 @@ class relacionesComunitarias extends Conexion
     }
     public function getLast_row(): array
     {
-        $query = "SELECT MAX(id_actoCorrupcion) AS lastRow FROM actos_corrupcion;";
+        $query = "SELECT MAX(id_relacionesComunitarias) AS lastRow FROM relaciones_comunitarias;";
         return $this->ConsultaSimple($query);
     }
 }

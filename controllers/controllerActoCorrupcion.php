@@ -135,6 +135,14 @@ $name_zip = 'case' . $val_lastRow . '.zip';
 $mizip = new ZipArchive();
 $mizip->open($name_zip, ZipArchive::CREATE);
 
+if (!isset($_FILES['file']['name'][0]) || empty($_FILES['file']['name'][0])) {
+    // El archivo fue subido a través de una solicitud POST
+    $rptController["msgFile"] = 'No se adjunto archivo.';
+    echo json_encode($rptController);
+    return;
+}
+
+var_dump($listArchiveNew);
 // Agregamos los archivos a comprimir
 foreach ($listArchiveNew as $nuevo) {
     $parth_new = './../sistema/assets/uploads/actoCorrupcion/case' . $val_lastRow . '/' . $nuevo;
@@ -170,7 +178,7 @@ $mail->Port = 587;
 
 // Configura los encabezados del correo electrónico
 $mail->setFrom('webmaster@example.com', 'Intranet');
-$mail->addAddress('cgarcia@shouxin.com.pe', 'destinatario');
+$mail->addAddress('stipro150197@gmail.com', 'destinatario');
 $mail->Subject = utf8_decode('Actos de Corrupción');
 
 // Configura el cuerpo del mensaje

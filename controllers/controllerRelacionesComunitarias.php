@@ -38,9 +38,9 @@ $val_lastRow = $lastRow[0]['lastRow'];
 // Verifico si es null y corrigo correlativo
 $val_lastRow = is_null($lastRow[0]['lastRow']) ? 1 : $lastRow[0]['lastRow'] + 1;
 
-$fileName = 'case' . $val_lastRow;
+$fileNameGlobal = 'case' . $val_lastRow;
 
-$uploadDestination = './' . $fileName . '/';
+$uploadDestination = './' . $fileNameGlobal . '';
 
 // Comprobamos si existe carpeta si no existe lo creamos
 if (!file_exists($uploadDestination)) {
@@ -58,7 +58,7 @@ foreach ($_FILES['file']['name'] as $key => $fileName) {
     $newName = sprintf("%s.%s", uniqid(), $extension);
 
     // El archivo se ha subido correctamente
-    if (move_uploaded_file($uploadedFile, $uploadDestination . $newName)) {
+    if (move_uploaded_file($uploadedFile, $uploadDestination . '/' . $newName)) {
         $rptController["msgUpload"] = 'El archivo se ha subido correctamente.';
     }
     // Ha ocurrido un error al subir el archivo
@@ -88,10 +88,34 @@ $iterator = new RecursiveDirectoryIterator($uploadDestination);
 foreach (new RecursiveIteratorIterator($iterator) as $file) {
     if ($file->isFile()) {
         $zip->addFile($file->getPathname());
+        $rptController["msgZipStatus"] = 'Se comprimio correctamente.';
+    } else {
+        $rptController["msgZipStatus"] = 'Hubo un error.';
     }
 }
+var_dump($fileNameGlobal);
+var_dump(scandir($fileNameGlobal));
 
-rmdir($uploadDestination);
+function delTree($dir)
+{
+    var_dump($files = array_diff(scandir($dir), array('.', '..')));
+    foreach ($files as $file) {
+        var_dump(is_file("$dir/$file"));
+    }
+}
+delTree($fileNameGlobal);
+/* 
+var_dump($files);
+function delTree($dir)
+{
+    $files = array_diff(scandir($dir), array('.', '..'));
+    foreach ($files as $file) {
+        (is_dir("$dir/$file")) ? delTree("$dir/$file") : unlink("$dir/$file");
+    }
+    return rmdir($dir);
+}
+
+delTree($fileNameGlobal); */
 
 // Verificar Nombre
 if (!$_POST['namesSurnames']) {

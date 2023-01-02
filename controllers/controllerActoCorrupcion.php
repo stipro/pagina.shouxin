@@ -18,44 +18,65 @@ if ($_POST['acceptedTerms'] != 1) {
     return;
 }
 
+if (empty($_POST['array'])) {
+    $rptController["msg"] = '<ul>';
+    // El array está vacío o no se ha enviado
+} else {
+    //$rptController["msg"] = 'Falta Nombre';
+    // El array no está vacío
+}
+$verifyForm = false;
+
 // Verificar Anonimato
 if ($_POST['anonymityactCorruption'] != 'Si') {
     $verifyForm = FALSE;
     if (!$_POST['namesSurnames']) {
+        $rptController["msg"] .= '<li>Falta Nombre.</li>';
         $verifyForm = TRUE;
         /* echo 'Falta ingresar Nombre y apellido'; */
     }
     if (!$_POST['dni']) {
+        $rptController["msg"] .= '<li>Falta Dni.</li>';
         $verifyForm = TRUE;
         /* echo 'Falta ingresar DNI'; */
     }
     if (!$_POST['cellphone']) {
+        $rptController["msg"] .= '<li>Falta Telefono.</li>';
         $verifyForm = TRUE;
         /* echo 'Falta ingresar Telefono'; */
     }
     if (!$_POST['address']) {
+        $rptController["msg"] .= '<li>Falta Dirección.</li>';
         $verifyForm = TRUE;
         /* echo 'Falta ingresar Dirección'; */
     }
     if (!$_POST['email']) {
+        $rptController["msg"] .= '<li>Falta Correo.</li>';
         $verifyForm = TRUE;
         /* echo 'Falta ingresar Correo'; */
     }
-    if ($verifyForm) {
-        $rptController["status"] = 404;
-        $rptController["msg"] = 'Falta un dato';
-        echo json_encode($rptController);
-        return;
-    };
 }
 
 // Verificar Sustento
 if (!$_POST['lift']) {
     $rptController["status"] = 404;
-    $rptController["msg"] = 'Falta sustento';
+    $rptController["msg"] .= '<li>Falta sustento.</li>';
     echo json_encode($rptController);
     return;
 }
+
+if (!isset($_FILES['file']['name'][0]) || empty($_FILES['file']['name'][0])) {
+    // El archivo fue subido a través de una solicitud POST
+    $rptController["msg"] .= '<li>No se adjunto archivo.</li>';
+    $verifyForm = true;
+}
+
+if ($verifyForm) {
+    $rptController["status"] = 404;
+    $rptController["msg"] .= '</ul>';
+    echo json_encode($rptController);
+    return;
+};
 
 $val_acceptedTerms = $_POST['acceptedTerms'] ? $_POST['acceptedTerms'] : '';
 $val_anonymityactCorruption = $_POST['anonymityactCorruption'] ? $_POST['anonymityactCorruption'] : '';
@@ -95,7 +116,9 @@ if (!$rptSql) {
 // Obtener ultimo registro
 $lastRow = $actoCorrupcion->getLast_row();
 $val_lastRow = $lastRow[0]['lastRow'];
-$path_actscorruption = './../sistema/assets/uploads/actoCorrupcion/case' . $val_lastRow . '/';
+$path_actscorruption = 'case' . $val_lastRow . '/';
+
+$uploadDestination = './case' . $val_lastRow . '';
 
 if (!file_exists($path_actscorruption)) {
     $rptController["msg2"] = 'No existe carpeta, se va crear carpeta';
@@ -115,7 +138,7 @@ for ($i = 0; $i < $conteo; $i++) {
     $listArchiveNew[] = $nuevoNombre;
     // Mover del temporal al directorio actual
     //if (!move_uploaded_file($ubicacionTemporal, $path_actscorruption . $nuevoNombre)) {
-        //return;
+    //return;
     //}
 
     // Intentamos mover el archivo a la ruta de destino
@@ -132,25 +155,30 @@ for ($i = 0; $i < $conteo; $i++) {
 $name_zip = 'case' . $val_lastRow . '.zip';
 
 // Instanciamos la clase, esta viene en el paquete de PHP
-$mizip = new ZipArchive();
-$mizip->open($name_zip, ZipArchive::CREATE);
+$zip = new ZipArchive();
+$zip->open($name_zip, ZipArchive::CREATE);
 
-if (!isset($_FILES['file']['name'][0]) || empty($_FILES['file']['name'][0])) {
-    // El archivo fue subido a través de una solicitud POST
-    $rptController["msgFile"] = 'No se adjunto archivo.';
-    echo json_encode($rptController);
-    return;
+// Recorre la carpeta y sus contenidos utilizando la función "recursiveDirectoryIterator" 
+// y agrega cada archivo al archivo ZIP utilizando el método "addFile"
+$iterator = new RecursiveDirectoryIterator($uploadDestination);
+
+foreach (new RecursiveIteratorIterator($iterator) as $file) {
+    if ($file->isFile()) {
+        $zip->addFile($file->getPathname());
+        $rptController["msgZipStatus"] = 'Se comprimio correctamente.';
+    } else {
+        $rptController["msgZipStatus"] = 'Hubo un error.';
+    }
 }
 
-var_dump($listArchiveNew);
-// Agregamos los archivos a comprimir
+/* // Agregamos los archivos a comprimir
 foreach ($listArchiveNew as $nuevo) {
     $parth_new = './../sistema/assets/uploads/actoCorrupcion/case' . $val_lastRow . '/' . $nuevo;
 
     $mizip->addFile($parth_new, str_replace('./../sistema/assets/uploads/actoCorrupcion/', '', $parth_new));
 }
 
-$mizip->close();
+$mizip->close(); */
 
 // Generamos Archivo PDF
 require('../report_actosCorrupcion.php');
@@ -178,7 +206,7 @@ $mail->Port = 587;
 
 // Configura los encabezados del correo electrónico
 $mail->setFrom('webmaster@example.com', 'Intranet');
-$mail->addAddress('cumplimientomsp@shouxin.com.pe', 'destinatario');
+$mail->addAddress('stipro150197@gmail.com', 'destinatario');
 $mail->Subject = utf8_decode('Actos de Corrupción');
 
 // Configura el cuerpo del mensaje

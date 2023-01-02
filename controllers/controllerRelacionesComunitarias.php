@@ -212,6 +212,9 @@ require './../vendor/phpmailer/phpmailer/src/Exception.php';
 require './../vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require './../vendor/phpmailer/phpmailer/src/SMTP.php';
 
+// Crea una nueva instancia de PHPMailer
+$mail = new PHPMailer(true);
+
 // Configura el servidor SMTP para enviar el correo
 //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                    //Enable verbose debug output
 $mail->isSMTP();                                            //Send using SMTP
@@ -225,7 +228,7 @@ $mail->Port = 587;
 
 // Configura los encabezados del correo electrónico
 $mail->setFrom('webmaster@example.com', 'Intranet');
-$mail->addAddress('stipro150197', 'destinatario');
+$mail->addAddress('stipro150197@gmail.com', 'destinatario');
 $mail->Subject = utf8_decode('Actos de Corrupción');
 
 // Configura el cuerpo del mensaje

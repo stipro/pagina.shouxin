@@ -1,5 +1,5 @@
 <?php
-require('../library/rotation.php');
+require('./library/test_rotation.php');
 date_default_timezone_set('America/Lima');
 
 class PDF extends PDF_Rotate
@@ -8,7 +8,7 @@ class PDF extends PDF_Rotate
     function Header()
     {
         // Logo
-        $this->Image('../assets/img/isotipo-shouxin.png', 10, 8, 15);
+        $this->Image('./assets/img/isotipo-shouxin.png', 10, 8, 15);
         // Arial bold 15
         $this->SetFont('Arial', 'B', 7);
         // Movernos a la derecha
@@ -76,7 +76,7 @@ $pdf->Ln();
 $pdf->SetY(35);
 $pdf->SetX(150);
 $pdf->Cell(25, 5, utf8_decode('N° de Registro'), 0, 0, 'L');
-$pdf->Cell(25, 5, utf8_decode($val_lastRow), 1, 0, 'L');
+$pdf->Cell(25, 5, utf8_decode(''), 1, 0, 'L');
 
 $pdf->SetY(35);
 $pdf->SetX(10);
@@ -136,11 +136,11 @@ $pdf->Cell(190, 2, '', 0, 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 6);
 $pdf->Cell(30, 5, utf8_decode('Nombres'), 0, 0, 'L');
-$pdf->Cell(70, 4, utf8_decode($val_namesSurnames), 1, 0);
+$pdf->Cell(70, 4, utf8_decode(''), 1, 0);
 
 // Dirección
 $pdf->Cell(25, 5, utf8_decode('Dirección'), 0, 0, 'L');
-$pdf->Cell(60, 4, utf8_decode($val_direction), 1, 0);
+$pdf->Cell(60, 4, utf8_decode(''), 1, 0);
 
 $pdf->Ln();
 $pdf->Cell(190, 2, utf8_decode(''), 0, 0);
@@ -149,11 +149,11 @@ $pdf->Cell(190, 2, utf8_decode(''), 0, 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 6);
 $pdf->Cell(30, 5, utf8_decode('Correo electrónico'), 0, 0, 'L');
-$pdf->Cell(70, 4, utf8_decode($val_mail), 1, 0);
+$pdf->Cell(70, 4, utf8_decode(''), 1, 0);
 
 // Celular
 $pdf->Cell(25, 5, utf8_decode('Celular'), 0, 0, 'L');
-$pdf->Cell(60, 4, utf8_decode($val_mobile), 1, 0);
+$pdf->Cell(60, 4, utf8_decode(''), 1, 0);
 
 $pdf->Ln();
 $pdf->Cell(190, 2, '', 0, 0);
@@ -162,11 +162,11 @@ $pdf->Cell(190, 2, '', 0, 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 6);
 $pdf->Cell(30, 5, utf8_decode('Organización que representa'), 0, 0, 'L');
-$pdf->Cell(70, 4, utf8_decode($val_organization), 1, 0);
+$pdf->Cell(70, 4, utf8_decode(''), 1, 0);
 
 // Acompañantes
 $pdf->Cell(25, 5, utf8_decode('Acompañantes'), 0, 0, 'L');
-$pdf->Cell(60, 4, utf8_decode($val_escort), 1, 0);
+$pdf->Cell(60, 4, utf8_decode(''), 1, 0);
 $pdf->Ln();
 $pdf->Cell(190, 2, '', 0, 0);
 
@@ -174,14 +174,14 @@ $pdf->Cell(190, 2, '', 0, 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 6);
 $pdf->Cell(30, 5, utf8_decode('Frases Mencionadas'), 0, 0, 'L');
-$pdf->Cell(155, 4, utf8_decode($val_phrasesMentioned), 1, 0);
+$pdf->Cell(155, 4, utf8_decode(''), 1, 0);
 $pdf->Ln();
 $pdf->Cell(190, 2, '', 0, 0);
 $pdf->Ln();
 
 // Personas Referidas
 $pdf->Cell(30, 5, utf8_decode('Personas Referidas'), 0, 0, 'L');
-$pdf->Cell(60, 4, utf8_decode($val_referredPeople), 1, 0);
+$pdf->Cell(60, 4, utf8_decode(''), 1, 0);
 $pdf->Ln();
 $pdf->Cell(190, 2, '', 0, 0);
 
@@ -189,6 +189,6 @@ $pdf->Cell(190, 2, '', 0, 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 6);
 $pdf->Cell(30, 5, utf8_decode('Sucesos en el Tiempo'), 0, 0, 'L');
-$pdf->Cell(155, 4, utf8_decode($val_eventsInTime), 1, 0);
+$pdf->Cell(155, 4, utf8_decode(''), 1, 0);
 
-$pdf->Output('pacto' . $val_lastRow . '.pdf', 'F');
+$pdf->Output();

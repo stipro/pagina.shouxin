@@ -37,11 +37,12 @@ $(document).ready(function () {
                 // Hubo un error
             }
         }).done(function (res) {
-            if (res.status === 201) {
+            if (res.status === 422) {
                 toastr.success(res.msg, '¡Bien!');
                 //$('[name="name-product"]', form).val('');
             } else {
                 toastr.error(res.msg, '¡Upss!');
+
             }
         }).fail(function (err) {
             toastr.error('Hubo un error en la petición', '¡Upss!');

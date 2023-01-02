@@ -8,16 +8,15 @@ class relacionesComunitarias extends Conexion
         parent::__construct();
     }
     public function insert(
-        string $val_acceptedTerms,
-        string $val_anonymityactCorruption,
         string $val_namesSurnames,
-        int $val_dni,
-        int $val_cellphone,
-        string $val_address,
-        string $val_email,
-        string $val_typeofcomplaint,
-        string $val_lift,
-        int $valArchive
+        string $val_direction,
+        string $val_mail,
+        int $val_mobile,
+        string $val_organization,
+        string $val_escort,
+        string $val_phrasesMentioned,
+        string $val_referredPeople,
+        string $val_eventsInTime
     ) {
 
         try {
@@ -44,15 +43,15 @@ class relacionesComunitarias extends Conexion
             $result = $this->db->prepare($query);
             $result->execute(
                 array(
-                    ':relacionesComunitarias_nombre' => $val_acceptedTerms,
-                    ':relacionesComunitarias_direccion' => $val_anonymityactCorruption,
-                    ':relacionesComunitarias_correo' => $val_namesSurnames,
-                    ':relacionesComunitarias_celular' => $val_dni,
-                    ':relacionesComunitarias_organizacion' => $val_cellphone,
-                    ':relacionesComunitarias_acompaniante' => $val_address,
-                    ':relacionesComunitarias_frasesMencionadas' => $val_email,
-                    ':relacionesComunitarias_personasReferidas' => $val_typeofcomplaint,
-                    ':relacionesComunitarias_sucesoseneltiempo' => $val_lift
+                    ':relacionesComunitarias_nombre' => $val_namesSurnames,
+                    ':relacionesComunitarias_direccion' => $val_direction,
+                    ':relacionesComunitarias_correo' => $val_mail,
+                    ':relacionesComunitarias_celular' => $val_mobile,
+                    ':relacionesComunitarias_organizacion' => $val_organization,
+                    ':relacionesComunitarias_acompaniante' => $val_escort,
+                    ':relacionesComunitarias_frasesMencionadas' => $val_phrasesMentioned,
+                    ':relacionesComunitarias_personasReferidas' => $val_referredPeople,
+                    ':relacionesComunitarias_sucesoseneltiempo' => $val_eventsInTime
                 )
             );
 

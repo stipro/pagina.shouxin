@@ -182,6 +182,9 @@ foreach (new RecursiveIteratorIterator($iterator) as $file) {
     }
 }
 
+// Cerrar el archivo zip
+$zip->close();
+
 // Envia datos para registra en la base datos
 $rptSql = $relacionesComunitarias->insert(
     $val_namesSurnames,

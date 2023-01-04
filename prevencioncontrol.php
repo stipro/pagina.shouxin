@@ -19,6 +19,7 @@
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.13.1/datatables.min.css" />
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
@@ -194,7 +195,7 @@
                                             Si ha respondido "si", proporcione detalles en el recuadro inferior que permitan a la Empresa evaluar la situación.
                                         </p>
                                         <div class="table-responsive">
-                                            <table class="table table-bordered table-hover">
+                                            <table class="table table-bordered table-hover" id="questionnaire-one">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
@@ -720,6 +721,7 @@
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.13.1/datatables.min.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -735,6 +737,22 @@
 
     <!-- Base JS File -->
     <script src="assets/js/base.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#questionnaire-one').DataTable({
+
+                // Para quitar la opción "Mostrar X entradas"
+                lengthChange: false,
+                // la numeración de la tabla
+                paging: false,
+                // la opción de búsqueda
+                searching: false,
+                // ordenamiento de columna
+                ordering: false
+            });
+        });
+    </script>
 
 </body>
 

@@ -76,13 +76,13 @@
                 </div>
 
                 <div class="row mb-5">
-                    <form id="formCreate-sexualHarassment" class="php-email-form">
+                    <form id="formCreate-laborClaim" class="php-email-form">
                         <div class="row">
                             <div class="col-12 col-sm-6 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Nombre y apellido<span class="text-danger">*</span></label>
+                                    <label for="namesSurnames-laborClaim" class="control-label form-control-sm form-label">Nombre y apellido<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="namesSurnames-victim" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Nombres" value="">
+                                        <input type="text" name="namesSurnames" id="namesSurnames-laborClaim" class="form-control form-control-sm" placeholder="Nombres" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -90,9 +90,9 @@
                             </div>
                             <div class="col-12 col-sm-6 mb-3">
                                 <div class="form-group">
-                                    <label for="identificationDocument-sexualHarassment" class="control-label form-control-sm form-label">Cargo<span class="text-danger">*</span></label>
+                                    <label for="position-laborClaim" class="control-label form-control-sm form-label">Cargo<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="identificationDocumen-victimt" id="identificationDocument-sexualHarassment" class="form-control form-control-sm" placeholder="Cargo" value="">
+                                        <input type="text" name="position" id="position-laborClaim" class="form-control form-control-sm" placeholder="Cargo" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -100,9 +100,9 @@
                             </div>
                             <div class="col-12 col-sm-4 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Correo Electronico<span class="text-danger">*</span></label>
+                                    <label for="email-laborClaim" class="control-label form-control-sm form-label">Correo Electronico<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="namesSurnames-victim" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Correo Electronico" value="">
+                                        <input type="text" name="email" id="email-laborClaim" class="form-control form-control-sm" placeholder="Correo Electronico" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -110,9 +110,9 @@
                             </div>
                             <div class="col-12 col-sm-4 mb-3">
                                 <div class="form-group">
-                                    <label for="identificationDocument-sexualHarassment" class="control-label form-control-sm form-label">Telefono<span class="text-danger">*</span></label>
+                                    <label for="phone-laborClaim" class="control-label form-control-sm form-label">Telefono<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="identificationDocumen-victimt" id="identificationDocument-sexualHarassment" class="form-control form-control-sm" placeholder="Telefono" value="">
+                                        <input type="text" name="phone" id="phone-laborClaim" class="form-control form-control-sm" placeholder="Telefono" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -120,9 +120,9 @@
                             </div>
                             <div class="col-12 col-sm-4 mb-3">
                                 <div class="form-group">
-                                    <label for="namesSurnames-sexualHarassment" class="control-label form-control-sm form-label">Situacion Laboral<span class="text-danger">*</span></label>
+                                    <label for="employmentSituation-laborClaim" class="control-label form-control-sm form-label">Situacion Laboral<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="namesSurnames-victim" id="namesSurnames-sexualHarassment" class="form-control form-control-sm" placeholder="Situacion Laboral" value="">
+                                        <input type="text" name="employmentSituation" id="employmentSituation-laborClaim" class="form-control form-control-sm" placeholder="Situacion Laboral" value="">
                                         <div>
                                         </div>
                                     </div>
@@ -130,9 +130,9 @@
                             </div>
                             <div class="col-12 col-sm-12 mb-3">
                                 <div class="form-group">
-                                    <label for="identificationDocument-sexualHarassment" class="control-label form-control-sm form-label">Asunto<span class="text-danger">*</span></label>
+                                    <label for="matter-laborClaim" class="control-label form-control-sm form-label">Asunto<span class="text-danger">*</span></label>
                                     <div class="input-group input-group-sm">
-                                        <textarea class="form-control form-control-sm" name="" placeholder="Asunto" id="" cols="30" rows="10"></textarea>
+                                        <textarea class="form-control form-control-sm" name="matter" placeholder="Asunto" id="" cols="30" rows="10"></textarea>
                                         <div>
                                         </div>
                                     </div>
@@ -176,7 +176,7 @@
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
     <!-- waitme js -->
     <script src="assets/waitme/waitMe.min.js"></script>
@@ -189,6 +189,9 @@
 
     <!-- Base JS File -->
     <script src="assets/js/base.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/reclamoLaboral.js"></script>
 
 </body>
 

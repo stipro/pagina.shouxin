@@ -139,7 +139,7 @@
                                             <label class="form-check-label" for="optionOne-actCorruption">Si</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input me-3" type="radio" name="anonymityactCorruption" id="optionTwo-actCorruption" value="No" checked>
+                                            <input class="form-check-input me-3" type="radio" name="anonymityactCorruption" id="optionTwo-actCorruption" value="No">
                                             <label class="form-check-label" for="optionTwo-actCorruption">No</label>
                                         </div>
                                     </div>

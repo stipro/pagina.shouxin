@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="section-header mt-5">
-                    <h2>Formulario de Prevención y Control del Sistema anticorrupción</h2>
+                    <h2>Prevención y Control del Sistema anticorrupción</h2>
                     <p>CANAL DE DENUNCIAS, RECLAMOS Y CONSULTAS MSP</p>
                 </div>
 

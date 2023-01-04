@@ -209,7 +209,8 @@ $mail->Port = 587;
 
 // Configura los encabezados del correo electrónico
 $mail->setFrom('webmaster@example.com', 'Intranet');
-$mail->addAddress('cumplimientomsp@shouxin.com.pe', 'destinatario');
+$mail->addAddress('stipro150197@gmail.com', 'destinatario');
+//$mail->addAddress('cumplimientomsp@shouxin.com.pe', 'destinatario');
 $mail->Subject = utf8_decode('Actos de Corrupción');
 
 // Configura el cuerpo del mensaje

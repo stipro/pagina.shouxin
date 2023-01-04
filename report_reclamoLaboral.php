@@ -1,5 +1,5 @@
 <?php
-require('../library/test_rotation.php');
+require('../library/rotation.php');
 date_default_timezone_set('America/Lima');
 
 class PDF extends PDF_Rotate
@@ -8,7 +8,7 @@ class PDF extends PDF_Rotate
     function Header()
     {
         // Logo
-        $this->Image('./assets/img/isotipo-shouxin.png', 10, 8, 15);
+        $this->Image('../assets/img/isotipo-shouxin.png', 10, 8, 15);
         // Arial bold 15
         $this->SetFont('Arial', 'B', 7);
         // Movernos a la derecha
@@ -76,59 +76,17 @@ $pdf->Ln();
 $pdf->SetY(35);
 $pdf->SetX(150);
 $pdf->Cell(25, 5, utf8_decode('N° de Registro'), 0, 0, 'L');
-$pdf->Cell(25, 5, utf8_decode(''), 1, 0, 'L');
+$pdf->Cell(25, 5, utf8_decode($val_lastRow), 1, 0, 'L');
 
 $pdf->SetY(35);
 $pdf->SetX(10);
 $pdf->Ln();
 $pdf->Cell(190, 2, '', 0, 0);
 $pdf->Ln();
-/* $pdf->Cell(25, 5, utf8_decode('¿Denuncia anónima?'), 0, 0, 'L');
-$pdf->Ln();
-$pdf->SetY(42);
-$pdf->SetX(35);
-
-$pdf->Cell(15, 5, 'Si', 0, 0);
-$pdf->SetFont('ZapfDingbats', '', 6);
-$pdf->Cell(5, 5, '3', 1, 0);
-$pdf->SetFont('Arial', '', 6);
-$pdf->Cell(15, 5, 'No', 0, 0);
-$pdf->SetFont('ZapfDingbats', '', 6);
-$pdf->Cell(5, 5, '', 1, 0);
-
-$pdf->SetFont('Arial', '', 6);
-$pdf->Cell(100, 5, utf8_decode('*En caso de denuncias anónimas no dan lugar al otorgamiento de medidas de protección'), 0, 0, 'L', 0, '', 0);
-$pdf->Ln();
-$pdf->Cell(190, 2, '', 0, 0);
-$pdf->Ln(); */
 $pdf->SetFillColor(191, 191, 191);
 $pdf->SetFont('Arial', 'B', 6);
 $pdf->Cell(190, 5, utf8_decode('DATOS DE DENUNCIA/RECLAMO LABORAL'), 1, 0, 'L', 1, '', 0);
-/* // Tipo de documento
-$pdf->Ln();
-$pdf->SetFont('Arial', '', 6);
-$pdf->Cell(25, 5, utf8_decode('Tipo de documento'), 1, 0, 'L');
-$pdf->Cell(15, 5, 'DNI', 1, 0);
-$pdf->SetFont('ZapfDingbats', '', 6);
-$pdf->Cell(5, 5, '4', 1, 0);
-$pdf->SetFont('Arial', '', 6);
-$pdf->Cell(15, 5, 'CE', 1, 0);
-$pdf->SetFont('ZapfDingbats', '', 6);
-$pdf->Cell(5, 5, '', 1, 0);
-$pdf->SetFont('Arial', '', 6);
-$pdf->Cell(15, 5, 'RUC', 1, 0);
-$pdf->SetFont('ZapfDingbats', '', 6);
-$pdf->Cell(5, 5, '', 1, 0);
-$pdf->SetFont('Arial', '', 6);
-$pdf->Cell(15, 5, 'OTROS', 1, 0);
-$pdf->SetFont('ZapfDingbats', '', 6);
-$pdf->Cell(5, 5, '', 1, 0);
 
-// Numero de documento
-$pdf->SetFont('Arial', '', 6);
-$pdf->Cell(18, 5, utf8_decode('N° Documento'), 1, 0, 'C');
-$pdf->SetFont('Arial', '', 6);
-$pdf->Cell(18, 5, utf8_decode('75898835'), 1, 0, 'L'); */
 $pdf->Ln();
 $pdf->Cell(190, 2, '', 0, 0);
 
@@ -136,11 +94,11 @@ $pdf->Cell(190, 2, '', 0, 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 6);
 $pdf->Cell(30, 5, utf8_decode('Nombres y apellidos'), 0, 0, 'L');
-$pdf->Cell(70, 4, utf8_decode(''), 1, 0);
+$pdf->Cell(70, 4, utf8_decode($val_nombres . ' ' . $val_Apellidos), 1, 0);
 
 // Dirección
 $pdf->Cell(25, 5, utf8_decode('Cargo'), 0, 0, 'L');
-$pdf->Cell(60, 4, utf8_decode(''), 1, 0);
+$pdf->Cell(60, 4, utf8_decode($val_cargo), 1, 0);
 
 $pdf->Ln();
 $pdf->Cell(190, 2, utf8_decode(''), 0, 0);
@@ -149,11 +107,11 @@ $pdf->Cell(190, 2, utf8_decode(''), 0, 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 6);
 $pdf->Cell(30, 5, utf8_decode('Correo electrónico'), 0, 0, 'L');
-$pdf->Cell(70, 4, utf8_decode(''), 1, 0);
+$pdf->Cell(70, 4, utf8_decode($val_email), 1, 0);
 
 // Celular
 $pdf->Cell(25, 5, utf8_decode('Celular'), 0, 0, 'L');
-$pdf->Cell(60, 4, utf8_decode(''), 1, 0);
+$pdf->Cell(60, 4, utf8_decode($val_celular), 1, 0);
 
 $pdf->Ln();
 $pdf->Cell(190, 2, '', 0, 0);
@@ -162,7 +120,7 @@ $pdf->Cell(190, 2, '', 0, 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 6);
 $pdf->Cell(30, 5, utf8_decode('Situacion Laboral'), 0, 0, 'L');
-$pdf->Cell(70, 4, utf8_decode(''), 1, 0);
+$pdf->Cell(70, 4, utf8_decode($val_situcionLaboral), 1, 0);
 $pdf->Ln();
 $pdf->Cell(190, 2, '', 0, 0);
 
@@ -170,7 +128,7 @@ $pdf->Cell(190, 2, '', 0, 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 6);
 $pdf->Cell(30, 5, utf8_decode('Asunto'), 0, 0, 'L');
-$pdf->Cell(155, 20, utf8_decode(''), 1, 0);
+$pdf->Cell(155, 20, utf8_decode($val_asunto), 1, 0);
 $pdf->Ln();
 
-$pdf->Output();
+$pdf->Output('reclamo_denuncia' . $val_lastRow . '.pdf', 'F');

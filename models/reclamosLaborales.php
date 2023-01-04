@@ -61,7 +61,7 @@ class reclamosLaborales extends Conexion
     }
     public function getLast_row(): array
     {
-        $query = "SELECT MAX(id_reclamo_laboral) AS lastRow FROM reclamos_laboral;";
+        $query = "SELECT MAX(id_reclamoLaboral) AS lastRow FROM reclamos_laboral;";
         return $this->ConsultaSimple($query);
     }
 }

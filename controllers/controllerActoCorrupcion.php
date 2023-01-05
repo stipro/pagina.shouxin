@@ -184,7 +184,7 @@ foreach ($listArchiveNew as $nuevo) {
 $mizip->close(); */
 
 // Generamos Archivo PDF
-require('../report_actosCorrupcion.php');
+/* require('../report_actosCorrupcion.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -225,7 +225,7 @@ if (!$mail->send()) {
     $rptController["msgPHPMailer"] = 'El mensaje no se pudo enviar. Error de PHPMailer:' . $mail->ErrorInfo;
 } else {
     $rptController["msgPHPMailer"] = 'Email enviado correctamente.';
-}
+} */
 
 
 /* // Generar la descarga en el navegador

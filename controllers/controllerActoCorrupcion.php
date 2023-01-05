@@ -246,11 +246,11 @@ try {
 
     //Movemos Archivo
     //rename($name_zip, $path_actscorruption . $name_zip);
+    $rptController["status"] = 201;
+    $rptController["msg"] = 'Se registro correctamente';
+
 } catch (Exception $e) {
     $rptController["status"] = 400;
     $rptController["msg"] .= 'Ocurrio error ' . $e->getMessage();
 }
-
-$rptController["status"] = 201;
-$rptController["msg"] = 'Se registro correctamente';
 echo json_encode($rptController);

@@ -199,7 +199,6 @@ $mail = new PHPMailer(true);
 // Configura el servidor SMTP para enviar el correo
 //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                    //Enable verbose debug output
 $mail->isSMTP();                                            //Send using SMTP
-$mail->SMTPAuth = true;
 $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 $mail->Username   = 'sistema.shouxin@gmail.com';

@@ -179,13 +179,13 @@ try {
     $zip->close();
 
     /* // Agregamos los archivos a comprimir
-foreach ($listArchiveNew as $nuevo) {
-    $parth_new = './../sistema/assets/uploads/actoCorrupcion/case' . $val_lastRow . '/' . $nuevo;
+    foreach ($listArchiveNew as $nuevo) {
+        $parth_new = './../sistema/assets/uploads/actoCorrupcion/case' . $val_lastRow . '/' . $nuevo;
 
-    $mizip->addFile($parth_new, str_replace('./../sistema/assets/uploads/actoCorrupcion/', '', $parth_new));
-}
+        $mizip->addFile($parth_new, str_replace('./../sistema/assets/uploads/actoCorrupcion/', '', $parth_new));
+    }
 
-$mizip->close(); */
+    $mizip->close(); */
 
     // Generamos Archivo PDF
     require('../report_actosCorrupcion.php');
@@ -239,13 +239,13 @@ $mizip->close(); */
 
 
     // Generar la descarga en el navegador
-    header('Content-Type: application/zip');
+    /* header('Content-Type: application/zip');
     header('Content-disposition: attachment; filename=' . $name_zip);
     header('Content-Length: ' . filesize($name_zip));
-    readfile($name_zip);
+    readfile($name_zip); */
 
     //Movemos Archivo
-    rename($name_zip, $path_actscorruption . $name_zip);
+    //rename($name_zip, $path_actscorruption . $name_zip);
 } catch (Exception $e) {
     $rptController["status"] = 400;
     $rptController["msg"] .= 'Ocurrio error ' . $e->getMessage();

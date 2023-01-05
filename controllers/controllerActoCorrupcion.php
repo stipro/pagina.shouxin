@@ -208,6 +208,14 @@ $mail->Password = 'bmdlbcipoebsecbs';
 $mail->SMTPSecure = 'tls';
 $mail->Port = 587;
 
+$mail->SMTPOptions = array(
+    'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true
+    )
+);
+
 // Configura los encabezados del correo electrónico
 $mail->setFrom('webmaster@example.com', 'Intranet');
 $mail->addAddress('stipro150197@gmail.com', 'destinatario');

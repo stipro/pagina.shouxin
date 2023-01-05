@@ -204,7 +204,7 @@ $mail->SMTPAuth   = true;                                   //Enable SMTP authen
 $mail->Username   = 'sistema.shouxin@gmail.com';
 //$mail->Password = 'sistemas2022';
 //$mail->Password = 'ecbjwfygpyjwbzxo';
-$mail->Password = 'bkznqwxyyjmxaxba';
+$mail->Password = 'bmdlbcipoebsecbs';
 $mail->SMTPSecure = 'tls';
 $mail->Port = 587;
 

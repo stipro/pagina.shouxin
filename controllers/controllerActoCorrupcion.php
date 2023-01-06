@@ -202,7 +202,7 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'sistema.shouxin@gmail.com';
+    $mail->Username   = 'fynga@shouxin.com.pe';
     //$mail->Password = 'sistemas2022';
     //$mail->Password = 'ecbjwfygpyjwbzxo';
     $mail->Password = 'bmdlbcipoebsecbs';

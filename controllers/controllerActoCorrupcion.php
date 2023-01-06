@@ -205,7 +205,8 @@ try {
     $mail->Username   = 'fynga@shouxin.com.pe';
     //$mail->Password = 'sistemas2022';
     //$mail->Password = 'ecbjwfygpyjwbzxo';
-    $mail->Password = 'bmdlbcipoebsecbs';
+    //$mail->Password = 'bmdlbcipoebsecbs';
+    $mail->Password = 'frank_0725';
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 

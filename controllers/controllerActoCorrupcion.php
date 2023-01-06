@@ -200,26 +200,29 @@ try {
     // Configura el servidor SMTP para enviar el correo
     //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                    //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.office365.com';                       //Set the SMTP server to send through
+    $mail->Host       = 'smtp.office365.com';                   //Set the SMTP server to send through
+    //$mail->Host       = 'smtp.office365.com';                   //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'fynga@shouxin.com.pe';
     //$mail->Password = 'sistemas2022';
     //$mail->Password = 'ecbjwfygpyjwbzxo';
     //$mail->Password = 'bmdlbcipoebsecbs';
-    $mail->Password = 'frank_0725';
-    $mail->SMTPSecure = 'STARTTLS';
+    // bpbswwpmjogorzms
+    $mail->Password = 'Mansion_0725';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  
+    //$mail->SMTPSecure = 'STARTTLS';
     $mail->Port = 587;
 
-    $mail->SMTPOptions = array(
+    /* $mail->SMTPOptions = array(
         'ssl' => array(
             'verify_peer' => false,
             'verify_peer_name' => false,
             'allow_self_signed' => true
         )
-    );
+    ); */
 
     // Configura los encabezados del correo electrónico
-    $mail->setFrom('webmaster@example.com', 'Intranet');
+    $mail->setFrom('fynga@shouxin.com.pe', 'Intranet');
     $mail->addAddress('stipro150197@gmail.com', 'destinatario');
     //$mail->addAddress('cumplimientomsp@shouxin.com.pe', 'destinatario');
     $mail->Subject = utf8_decode('Actos de Corrupción');

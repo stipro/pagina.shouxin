@@ -200,14 +200,14 @@ try {
     // Configura el servidor SMTP para enviar el correo
     //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                    //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
+    $mail->Host       = 'smtp.office365.com';                       //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'fynga@shouxin.com.pe';
     //$mail->Password = 'sistemas2022';
     //$mail->Password = 'ecbjwfygpyjwbzxo';
     //$mail->Password = 'bmdlbcipoebsecbs';
     $mail->Password = 'frank_0725';
-    $mail->SMTPSecure = 'tls';
+    $mail->SMTPSecure = 'STARTTLS';
     $mail->Port = 587;
 
     $mail->SMTPOptions = array(

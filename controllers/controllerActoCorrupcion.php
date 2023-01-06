@@ -213,13 +213,13 @@ try {
     //$mail->SMTPSecure = 'STARTTLS';
     $mail->Port = 587;
 
-    /* $mail->SMTPOptions = array(
+    $mail->SMTPOptions = array(
         'ssl' => array(
             'verify_peer' => false,
             'verify_peer_name' => false,
             'allow_self_signed' => true
         )
-    ); */
+    );
 
     // Configura los encabezados del correo electrónico
     $mail->setFrom('fynga@shouxin.com.pe', 'Intranet');

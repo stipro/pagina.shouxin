@@ -13,7 +13,7 @@ class Conexion
             $url_actual = $this->get_url();
             $separador = "/"; // Usar una cadena
             $ubicaciones = explode($separador, $url_actual);
-            //var_dump($ubicaciones);
+            var_dump($ubicaciones);
             if ($ubicaciones[2] == 'localhost') {
 
                 $HOST   = '127.0.0.1';
@@ -27,6 +27,14 @@ class Conexion
                 $HOST   = '127.0.0.1';
                 $DBNAME = 'shouxinadm_sistema';
                 $USER   = 'shouxinadm';
+                $PASS   = 'M1n3rA$22$';
+                $con    = new PDO("mysql:host={$HOST}; dbname={$DBNAME}", $USER, $PASS);
+                $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $con->exec('SET CHARACTER SET UTF8');
+            } elseif ($ubicaciones[2] == 'stipro.soy.pe') {
+                $HOST   = '127.0.0.1';
+                $DBNAME = 'stiproso_MinaShouxinPeru';
+                $USER   = 'stiproso_MSP';
                 $PASS   = 'M1n3rA$22$';
                 $con    = new PDO("mysql:host={$HOST}; dbname={$DBNAME}", $USER, $PASS);
                 $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

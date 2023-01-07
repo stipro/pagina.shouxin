@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="section-header mt-5">
-                    <h2>Consulta/ Denuncias/ Reclamos al Cumplimiento de Pacto de Relaciónes</h2>
+                    <h2>Consultas/ Denuncias/ Reclamos al Cumplimiento de Pacto de Relaciónes</h2>
                     <p>CANAL DE DENUNCIAS, RECLAMOS Y CONSULTAS MSP</p>
                 </div>
 

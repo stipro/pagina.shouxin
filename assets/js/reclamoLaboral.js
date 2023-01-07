@@ -34,7 +34,7 @@ $(document).ready(function () {
                 // Hubo un error
             }
         }).done(function (res) {
-            if (res.status === 422) {
+            if (res.status === 201) {
                 toastr.success(res.msg, '¡Bien!');
                 //$('[name="name-product"]', form).val('');
             } else {

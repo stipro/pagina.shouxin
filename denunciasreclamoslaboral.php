@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="section-header mt-5">
-                    <h2>Denuncias/Reclamo Laboral</h2>
+                    <h2>Denuncias/Reclamos Laboral</h2>
                     <p>CANAL DE DENUNCIAS, RECLAMOS Y CONSULTAS MSP</p>
                 </div>
 

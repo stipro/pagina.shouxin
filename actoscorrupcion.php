@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="section-header mt-5">
-                    <h2>Acto de corrupción/Otros</h2>
+                    <h2>Actos de corrupción/Otros</h2>
                     <p>CANAL DE DENUNCIAS, RECLAMOS Y CONSULTAS MSP</p>
                 </div>
 

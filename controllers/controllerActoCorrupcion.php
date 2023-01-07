@@ -200,18 +200,22 @@ try {
     // Configura el servidor SMTP para enviar el correo
     //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                    //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.office365.com';                   //Set the SMTP server to send through
-    //$mail->Host       = 'smtp.office365.com';                   //Set the SMTP server to send through
+    $mail->Host       = 'mail.stipro.soy.pe';                   //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'fynga@shouxin.com.pe ';
+    $mail->Username   = 'intranet@stipro.soy.pe';
+    $mail->Password = 'hngu6rkt^zD?';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
+    //$mail->Host       = 'smtp.office365.com';                   //Set the SMTP server to send through
+
     //$mail->Password = 'sistemas2022';
     //$mail->Password = 'ecbjwfygpyjwbzxo';
     //$mail->Password = 'bmdlbcipoebsecbs';
     // bpbswwpmjogorzms
-    $mail->Password = 'Penetrador_200';
-    //$mail->Password = 'hngu6rkt^zD?';
-    $mail->SMTPSecure = 'STARTTLS';
-    $mail->Port = 587;
+    //$mail->Password = 'Penetrador_200';
+
+    //$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
+    
 
     $mail->SMTPOptions = array(
         'ssl' => array(
@@ -252,7 +256,6 @@ try {
     //rename($name_zip, $path_actscorruption . $name_zip);
     $rptController["status"] = 201;
     $rptController["msg"] = 'Se registro correctamente';
-
 } catch (Exception $e) {
     $rptController["status"] = 400;
     $rptController["msg"] .= 'Ocurrio error ' . $e->getMessage();

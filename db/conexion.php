@@ -13,7 +13,7 @@ class Conexion
             $url_actual = $this->get_url();
             $separador = "/"; // Usar una cadena
             $ubicaciones = explode($separador, $url_actual);
-            var_dump($ubicaciones);
+            //var_dump($ubicaciones);
             if ($ubicaciones[2] == 'localhost') {
 
                 $HOST   = '127.0.0.1';

@@ -203,14 +203,14 @@ try {
     $mail->Host       = 'smtp.office365.com';                   //Set the SMTP server to send through
     //$mail->Host       = 'smtp.office365.com';                   //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'fynga@shouxin.com.pe';
+    $mail->Username   = 'fynga@shouxin.com.pe ';
     //$mail->Password = 'sistemas2022';
     //$mail->Password = 'ecbjwfygpyjwbzxo';
     //$mail->Password = 'bmdlbcipoebsecbs';
     // bpbswwpmjogorzms
-    $mail->Password = 'Mansion_0725';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  
-    //$mail->SMTPSecure = 'STARTTLS';
+    $mail->Password = 'Penetrador_200';
+    //$mail->Password = 'hngu6rkt^zD?';
+    $mail->SMTPSecure = 'STARTTLS';
     $mail->Port = 587;
 
     $mail->SMTPOptions = array(

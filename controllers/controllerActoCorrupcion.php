@@ -227,7 +227,7 @@ try {
 
         // Configura los encabezados del correo electrónico
         //$mail->setFrom('intranet@stipro.soy.pe', 'Intranet');
-        $mail->setFrom('fynga@shouxin.com.pe', 'Intranet');
+        $mail->setFrom('sistema.shouxin@gmail.com', 'Intranet');
         $mail->addAddress('stipro150197@gmail.com', 'destinatario');
         //$mail->addAddress('cumplimientomsp@shouxin.com.pe', 'destinatario');
         $mail->Subject = utf8_decode('Actos de Corrupción');

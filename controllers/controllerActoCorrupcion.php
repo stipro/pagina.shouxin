@@ -209,14 +209,14 @@ try {
 
         //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                    //Enable verbose debug output
         // Configura el servidor SMTP para enviar el correo
-        $mail->isSMTP();                                    // Enviar a través de SMTP
+        /* $mail->isSMTP();                                    // Enviar a través de SMTP
         $mail->Host       = 'smtp.office365.com';           // Configurar el servidor SMTP
         $mail->SMTPAuth   = true;                           // Habilitar autenticación SMTP
         $mail->Username   = 'fynga@shouxin.com.pe';         // Nombre de usuario SMTP
         $mail->Password   = 'xxxxxxx';                     // Contraseña SMTP
         $mail->SMTPSecure = 'tls';                          // Habilitar cifrado TLS, `PHPMailer::ENCRYPTION_SMTPS` también acepta
-        $mail->Port       = 587;                            // Puerto SMTP */
-
+        $mail->Port       = 587;                            // Puerto SMTP 
+ */
         /* $mail->SMTPOptions = array(
             'ssl' => array(
                 'verify_peer' => false,

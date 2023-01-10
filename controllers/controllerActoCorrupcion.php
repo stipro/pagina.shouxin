@@ -213,7 +213,7 @@ try {
         $mail->Host       = 'smtp.office365.com';           // Configurar el servidor SMTP
         $mail->SMTPAuth   = true;                           // Habilitar autenticación SMTP
         $mail->Username   = 'fynga@shouxin.com.pe';         // Nombre de usuario SMTP
-        $mail->Password   = 'Compras_.2023';                // Contraseña SMTP
+        $mail->Password   = 'D4Ef#nNK';                // Contraseña SMTP
         $mail->SMTPSecure = 'tls';                          // Habilitar cifrado TLS, `PHPMailer::ENCRYPTION_SMTPS` también acepta
         $mail->Port       = 587;                            // Puerto SMTP
 

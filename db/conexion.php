@@ -31,10 +31,10 @@ class Conexion
                 $con    = new PDO("mysql:host={$HOST}; dbname={$DBNAME}", $USER, $PASS);
                 $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $con->exec('SET CHARACTER SET UTF8');
-            } elseif ($ubicaciones[2] == 'stipro.soy.pe') {
+            } elseif ($ubicaciones[2] == 'intranet.shouxin.com.pe') {
                 $HOST   = '127.0.0.1';
-                $DBNAME = 'stiproso_MinaShouxinPeru';
-                $USER   = 'stiproso_MSP';
+                $DBNAME = 'intrasho_intranet';
+                $USER   = 'intrasho_MSP';
                 $PASS   = 'M1n3rA$22$';
                 $con    = new PDO("mysql:host={$HOST}; dbname={$DBNAME}", $USER, $PASS);
                 $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

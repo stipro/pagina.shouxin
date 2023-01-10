@@ -197,50 +197,56 @@ try {
     // Crea una nueva instancia de PHPMailer
     $mail = new PHPMailer(true);
 
-    // Configura el servidor SMTP para enviar el correo
-    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                    //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.office365.com';                   //Set the SMTP server to send through
-    //$mail->Host       = 'smtp.office365.com';                   //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'fynga@shouxin.com.pe';
-    //$mail->Password = 'sistemas2022';
-    //$mail->Password = 'ecbjwfygpyjwbzxo';
-    //$mail->Password = 'bmdlbcipoebsecbs';
-    // bpbswwpmjogorzms
-    $mail->Password = 'Mansion_0725';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  
-    //$mail->SMTPSecure = 'STARTTLS';
-    $mail->Port = 587;
+    try {
 
-    $mail->SMTPOptions = array(
+        // Hosting Alternativo
+        /* $mail->Host       = 'mail.stipro.soy.pe';                   //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = 'intranet@stipro.soy.pe';
+        $mail->Password = 'hngu6rkt^zD?';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587; */
+        
+        //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                    //Enable verbose debug output
+        // Configura el servidor SMTP para enviar el correo
+        $mail->isSMTP();                                    // Enviar a través de SMTP
+        $mail->Host       = 'smtp.office365.com';           // Configurar el servidor SMTP
+        $mail->SMTPAuth   = true;                           // Habilitar autenticación SMTP
+        $mail->Username   = 'fynga@shouxin.com.pe';         // Nombre de usuario SMTP
+        $mail->Password   = 'Compras_.2023';                // Contraseña SMTP
+        $mail->SMTPSecure = 'tls';                          // Habilitar cifrado TLS, `PHPMailer::ENCRYPTION_SMTPS` también acepta
+        $mail->Port       = 587;                            // Puerto SMTP
+
+        /* $mail->SMTPOptions = array(
         'ssl' => array(
             'verify_peer' => false,
             'verify_peer_name' => false,
             'allow_self_signed' => true
         )
-    );
+    ); */
 
-    // Configura los encabezados del correo electrónico
-    $mail->setFrom('fynga@shouxin.com.pe', 'Intranet');
-    $mail->addAddress('stipro150197@gmail.com', 'destinatario');
-    //$mail->addAddress('cumplimientomsp@shouxin.com.pe', 'destinatario');
-    $mail->Subject = utf8_decode('Actos de Corrupción');
+        // Configura los encabezados del correo electrónico
+        //$mail->setFrom('intranet@stipro.soy.pe', 'Intranet');
+        $mail->setFrom('fynga@shouxin.com.pe', 'Intranet');
+        $mail->addAddress('stipro150197@gmail.com', 'destinatario');
+        //$mail->addAddress('cumplimientomsp@shouxin.com.pe', 'destinatario');
+        $mail->Subject = utf8_decode('Actos de Corrupción');
 
-    // Configura el cuerpo del mensaje
-    $mail->Body = 'Se genero solicito, se envia detalles.';
+        // Configura el cuerpo del mensaje
+        $mail->Body = 'Se genero solicito, se envia detalles.';
 
-    // Adjuntamos el archivo
-    $mail->addAttachment($name_zip, $name_zip);
-    $mail->addAttachment('case' . $val_lastRow . '.pdf', 'case' . $val_lastRow . '.pdf');
-
-    // Envía el correo electrónico
-    if (!$mail->send()) {
-        $rptController["msgPHPMailer"] = 'El mensaje no se pudo enviar. Error de PHPMailer:' . $mail->ErrorInfo;
-    } else {
-        $rptController["msgPHPMailer"] = 'Email enviado correctamente.';
+        // Adjuntamos el archivo
+        $mail->addAttachment($name_zip, $name_zip);
+        $mail->addAttachment('case' . $val_lastRow . '.pdf', 'case' . $val_lastRow . '.pdf');
+        // Envía el correo electrónico
+        if (!$mail->send()) {
+            $rptController["msgPHPMailer"] = 'El mensaje no se pudo enviar. Error de PHPMailer:' . $mail->ErrorInfo;
+        } else {
+            $rptController["msgPHPMailer"] = 'Email enviado correctamente.';
+        }
+    } catch (Exception $e) {
+        $rptController["msgPHPMailer"] = 'Ocurrio erro: ' . $e->getMessage();
     }
-
 
     // Generar la descarga en el navegador
     /* header('Content-Type: application/zip');
@@ -252,7 +258,6 @@ try {
     //rename($name_zip, $path_actscorruption . $name_zip);
     $rptController["status"] = 201;
     $rptController["msg"] = 'Se registro correctamente';
-
 } catch (Exception $e) {
     $rptController["status"] = 400;
     $rptController["msg"] .= 'Ocurrio error ' . $e->getMessage();

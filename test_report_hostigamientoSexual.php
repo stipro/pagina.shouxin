@@ -56,7 +56,7 @@ $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 7);
-$pdf->SetTitle(utf8_decode('Cumplimiento de Pactos de Relaciónes Comunitarias'));
+$pdf->SetTitle(utf8_decode('Denuncias o queja por acto de hostigamiento sexual'));
 
 // Agregar una etiqueta y un campo de texto para el nombre
 $pdf->SetFont('Arial', 'B', 6);
